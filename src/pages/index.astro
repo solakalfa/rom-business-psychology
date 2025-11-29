@@ -66,7 +66,7 @@ const clients = await getClients();
       <p>Together with the company's leadership team, we implement simple and concrete managerial solutions that enhance effectiveness and mitigate current and future challenges.</p>
     </div>
 
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
+    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
       We bring <span class="underline underline-offset-8 decoration-4 decoration-cyan-600">partnership</span> to the table
     </h2>
     
@@ -125,98 +125,78 @@ const clients = await getClients();
 <!-- VALUE STATEMENT - UPDATED COLORS -->
 <section class="bg-white py-16">
   <div class="container mx-auto px-6 max-w-4xl text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
+    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
       We offer <mark class="px-2 pb-1 text-gray-900 bg-cyan-200 rounded">long lasting platforms</mark> for leadership development & team enhancement.
     </h2>
-    <p class="text-xl text-gray-600 leading-relaxed">
-      Helping others is our purpose.
-    </p>
   </div>
 </section>
 
-<!-- TEAM GRID - UPDATED COLORS -->
+<!-- TEAM TEASER - Single Image + Blue Card -->
 <section class="py-16 bg-gray-50">
   <div class="container mx-auto px-6 max-w-4xl">
+    
+    <div class="grid md:grid-cols-2 gap-6 items-stretch">
+      
+      <!-- Left Side - Image -->
+      <div class="relative h-full">
+        <div class="relative overflow-hidden rounded-3xl bg-white shadow-2xl h-full">
+          <img 
+            src="/team/dreldadrom.jpeg" 
+            alt="Dr. Eldad Rom" 
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
 
-    <div class="mb-12">
-      <p class="text-xs uppercase tracking-widest text-gray-500 mb-4 font-semibold">
-        Our Team
-      </p>
-      
-      <h2 class="text-gray-900 mb-4">
-        Meet the family
-      </h2>
+      <!-- Right Side - Blue Card -->
+      <div class="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl p-8 lg:p-10 shadow-2xl flex flex-col justify-center">
+        
+        <div class="text-white space-y-6">
+          
+          <!-- Our Team -->
+          <p class="text-xs uppercase tracking-widest font-semibold opacity-90">
+            OUR TEAM
+          </p>
+          
+          <!-- Meet the family -->
+          <h2 class="text-4xl lg:text-5xl font-bold leading-tight">
+            Meet the family
+          </h2>
+          
+          <!-- Description -->
+          <p class="text-base lg:text-lg font-light opacity-95 leading-relaxed">
+            A group of dedicated practitioners from psychology and organizational development
+          </p>
 
-      <p class="text-lg text-gray-600 font-light">
-        Practitioners from psychology and organizational development.
-      </p>
-    </div>
+          <!-- Overlapping Avatars -->
+          <div class="flex items-center py-4">
+            <div class="flex -space-x-3">
+              <img src="/team/dr-eldad-rom.jpg" alt="Team member" class="w-12 h-12 rounded-full border-3 border-white hover:scale-110 transition-transform duration-300 hover:z-10 relative" />
+              <img src="/team/dr-david-segal.jpg" alt="Team member" class="w-12 h-12 rounded-full border-3 border-white hover:scale-110 transition-transform duration-300 hover:z-10 relative" />
+              <img src="/team/Ganit.jpg" alt="Team member" class="w-12 h-12 rounded-full border-3 border-white hover:scale-110 transition-transform duration-300 hover:z-10 relative" />
+              <img src="/team/Netta-Gefen-Organizational-consultant.jpg" alt="Team member" class="w-12 h-12 rounded-full border-3 border-white hover:scale-110 transition-transform duration-300 hover:z-10 relative" />
+              <img src="/team/meital.jpg" alt="Team member" class="w-12 h-12 rounded-full border-3 border-white hover:scale-110 transition-transform duration-300 hover:z-10 relative" />
+              <img src="/team/anat-1.jpg" alt="Team member" class="w-12 h-12 rounded-full border-3 border-white hover:scale-110 transition-transform duration-300 hover:z-10 relative" />
+              <img src="/team/עדנה-ארבל.jpg" alt="Team member" class="w-12 h-12 rounded-full border-3 border-white hover:scale-110 transition-transform duration-300 hover:z-10 relative" />
+              <img src="/team/Naama.jpg" alt="Team member" class="w-12 h-12 rounded-full border-3 border-white hover:scale-110 transition-transform duration-300 hover:z-10 relative" />
+            </div>
+          </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- CTA Button -->
+          <div class="pt-2">
+            <a 
+              href="/team" 
+              class="inline-flex items-center gap-2 bg-white text-cyan-600 px-6 py-3 rounded-full font-semibold text-base hover:bg-gray-100 transition-all hover:scale-105 shadow-lg"
+            >
+              Meet Our Team
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+              </svg>
+            </a>
+          </div>
 
-      <TeamCard 
-        name="Eldad Rom (Ph.D.)"
-        role="Founder & CEO"
-        image="/team/dr-eldad-rom.jpg"
-        memberId="eldad"
-      />
-      
-      <TeamCard 
-        name="David Segal (Ph.D.)" 
-        role="Clinical Psychologist" 
-        image="/team/dr-david-segal.jpg" 
-        memberId="david" 
-      />
-      
-      <TeamCard 
-        name="Ganit Rainer Sassover (M.A.)" 
-        role="Executive Coach" 
-        image="/team/Ganit.jpg" 
-        memberId="ganit" 
-      />
-      
-      <TeamCard 
-        name="Netta Gefen (M.A.)" 
-        role="Organizational Consultant" 
-        image="/team/Netta-Gefen-Organizational-consultant.jpg" 
-        memberId="netta" 
-      />
-      
-      <TeamCard 
-        name="Meital Drezner-Maimon (M.A.)" 
-        role="Organizational Consultant" 
-        image="/team/meital.jpg" 
-        memberId="meital" 
-      />
-      
-      <TeamCard 
-        name="Anat Frishman (M.A.)" 
-        role="Organizational Consultant" 
-        image="/team/anat-1.jpg" 
-        memberId="anat" 
-      />
-      
-      <TeamCard 
-        name="Edna Arbel (M.A.)" 
-        role="Executive Coach" 
-        image="/team/עדנה-ארבל.jpg" 
-        memberId="edna" 
-      />
-      
-      <TeamCard 
-        name="Naama Zalzman (M.A.)" 
-        role="Organizational Consultant" 
-        image="/team/Naama.jpg" 
-        memberId="naama" 
-      />
+        </div>
 
-      <!-- QUOTE BOX - UPDATED COLORS -->
-      <div class="relative bg-white border-2 border-gray-200 p-8 rounded-2xl flex items-center justify-center text-center hover:border-cyan-600 transition-colors">
-        <div class="absolute -top-3 -left-3 w-6 h-6 bg-cyan-600 rounded-full"></div>
-        <blockquote class="text-lg font-light text-gray-700">
-          "When I build a team, I first look for people who love to win."
-          <span class="text-sm mt-3 block text-gray-500">— Ross Perot</span>
-        </blockquote>
       </div>
 
     </div>
@@ -224,8 +204,7 @@ const clients = await getClients();
   </div>
 </section>
 
-<!-- Popup Container -->
-<div id="popup-container"></div>
+
 
 <!-- OFFERING STATEMENT - UPDATED COLORS -->
 <section class="bg-white py-16">
@@ -303,29 +282,26 @@ const clients = await getClients();
   }
 </style>
 
-<!-- HERO STATEMENT - MINIMAL & CLEAN -->
-<section class="relative py-8 bg-white">
-  
-  <!-- Subtle Background Pattern -->
-  <div class="absolute inset-0 opacity-[0.03]">
-    <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgb(6, 182, 212) 1px, transparent 0); background-size: 32px 32px;"></div>
-  </div>
-  
-  <!-- Content -->
-  <div class="relative z-10 container mx-auto px-6 max-w-4xl">
-    <div class="text-center">
+<!-- HERO STATEMENT - REDESIGNED -->
+<section class="bg-white py-16">
+  <div class="container mx-auto px-6 max-w-4xl">
+    
+    <div class="text-left">
+      
+      
       
       <!-- Main Statement -->
-      <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-8">
         Strengthen effective performance for
-        <span class="relative inline-block mt-2">
-          <span class="relative z-10 bg-gradient-to-r from-cyan-600 via-blue-600 to-teal-600 bg-clip-text text-transparent">
-            individuals, teams, and organizations
-          </span>
-          <span class="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-cyan-200/50 via-blue-200/50 to-teal-200/50 -z-0"></span>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">
+          individuals, teams, and organizations
         </span>
-        <span class="block mt-2">with our services.</span>
       </h2>
+      
+      <!-- Supporting Text -->
+      <p class="text-xl text-gray-600 leading-relaxed max-w-3xl">
+        Our knowledge combines a thorough understanding of human behavior along with comprehensive experience in the business ecosystem.
+      </p>
       
     </div>
   </div>
@@ -348,7 +324,7 @@ const clients = await getClients();
           Publications
         </p>
         
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
           Media & Articles
         </h2>
         
@@ -373,7 +349,7 @@ const clients = await getClients();
           Our Approach
         </p>
         
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
           Explore Our Ecosystem
         </h2>
         
@@ -396,77 +372,6 @@ const clients = await getClients();
   </div>
 </section>
 
-<!-- CONTACT CTA - MINIMAL & CLEAN -->
-<section class="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50">
-  <div class="container mx-auto px-6 max-w-4xl">
-    
-    <!-- Main Content -->
-    <div class="text-center">
-      
-      
-
-      <!-- Heading -->
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
-        Can we be of any assistance?
-      </h2>
-      
-      <!-- Description -->
-      <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
-        Whether you are focused on a particular service or just want to explore how we can help, we'd love to hear from you.
-      </p>
-
-      <!-- Contact Methods - Simple Row -->
-      <div class="flex flex-wrap justify-center gap-4 mb-10">
-        
-        <!-- Phone -->
-        <a href="tel:+972-3-XXX-XXXX" class="flex items-center gap-3 px-6 py-3 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-200">
-          <div class="w-10 h-10 bg-cyan-600 rounded-lg flex items-center justify-center">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-            </svg>
-          </div>
-          <div class="text-left">
-            <p class="text-xs text-gray-500">Call us</p>
-            <p class="text-sm font-semibold text-gray-900">+972-3-XXX-XXXX</p>
-          </div>
-        </a>
-
-        <!-- Email -->
-        <a href="mailto:info@rompsyc.com" class="flex items-center gap-3 px-6 py-3 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-200">
-          <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-            </svg>
-          </div>
-          <div class="text-left">
-            <p class="text-xs text-gray-500">Email us</p>
-            <p class="text-sm font-semibold text-gray-900">info@rompsyc.com</p>
-          </div>
-        </a>
-
-      </div>
-
-      <!-- Main CTA - Simple -->
-      <a 
-        href="/contact" 
-        class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-700 hover:to-blue-700 shadow-lg transition-all"
-      >
-        Get in Touch
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
-        </svg>
-      </a>
-
-    </div>
-
-  </div>
-</section>
-
-
-
-<!-- Popup Container -->
-<div id="popup-container"></div>
-
 </Layout>
 
 <style>
@@ -484,101 +389,8 @@ const clients = await getClients();
   }
 </style>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const buttons = document.querySelectorAll('[data-member-id]');
-    const container = document.getElementById('popup-container');
-    
-    if (!container) {
-      console.error('Popup container not found');
-      return;
-    }
-
-    buttons.forEach(button => {
-      button.addEventListener('click', async () => {
-        const memberId = button.getAttribute('data-member-id');
-        console.log('Clicked member:', memberId);
-        
-        try {
-          // Get member data from team.js
-          const { getTeamMembers } = await import('../data/team.js');
-          const teamData = await getTeamMembers();
-          const member = teamData[memberId]; // 👈 זה השינוי! אובייקט ולא מערך
-          
-          if (!member) {
-            console.error('Member not found:', memberId);
-            return;
-          }
-          
-          // Create popup
-          container.innerHTML = `
-            <div class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" id="popup-backdrop">
-              <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
-                
-                <!-- Header -->
-                <div class="sticky top-0 bg-gradient-to-r from-cyan-600 to-blue-600 text-white p-6 flex items-center justify-between">
-                  <div class="flex items-center gap-4">
-                    <img src="${member.image}" alt="${member.name}" class="w-16 h-16 rounded-full object-cover border-2 border-white" />
-                    <div>
-                      <h2 class="text-xl font-bold">${member.name}</h2>
-                      <p class="text-cyan-100">${member.role}</p>
-                    </div>
-                  </div>
-                  <button id="close-popup" class="text-white hover:rotate-90 transition-transform duration-300">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-                
-                <!-- Content -->
-                <div class="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
-                  <p class="text-gray-700 leading-relaxed whitespace-pre-line">${member.bio}</p>
-                  
-                  ${member.email ? `
-                    <div class="mt-6 pt-6 border-t border-gray-200">
-                      <a href="mailto:${member.email}" class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-medium">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        ${member.email}
-                      </a>
-                    </div>
-                  ` : ''}
-                </div>
-              </div>
-            </div>
-          `;
-          
-          // Close handlers
-          const closeBtn = document.getElementById('close-popup');
-          const backdrop = document.getElementById('popup-backdrop');
-          
-          const closePopup = () => {
-            container.innerHTML = '';
-          };
-          
-          closeBtn?.addEventListener('click', closePopup);
-          backdrop?.addEventListener('click', (e) => {
-            if (e.target === backdrop) closePopup();
-          });
-          
-          document.addEventListener('keydown', function escHandler(e) {
-            if (e.key === 'Escape') {
-              closePopup();
-              document.removeEventListener('keydown', escHandler);
-            }
-          });
-          
-        } catch (error) {
-          console.error('Error loading team member:', error);
-        }
-      });
-    });
-  });
-</script>
 
 
-<TeamsCTA />
+
 <Footer />
 </Layout>

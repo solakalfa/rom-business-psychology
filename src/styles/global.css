@@ -26,4 +26,4 @@ h3 {
 /* Text utilities */
 .text-large {
   @apply text-xl font-normal;
-}@import "tailwindcss";
+}

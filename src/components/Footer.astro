@@ -2,6 +2,162 @@
 // src/components/Footer.astro
 ---
 
+<!-- CONTACT CTA - INTEGRATED WITH FOOTER -->
+<section class="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50">
+  <div class="container mx-auto px-6 max-w-4xl">
+    
+    <!-- Main Content -->
+    <div class="text-left">
+      
+      <!-- Heading with Icon -->
+      <div class="flex items-center gap-4 mb-5">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900">
+          Can we be of any assistance?
+        </h2>
+        <svg class="w-12 h-12 md:w-16 md:h-16 text-cyan-600 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+        </svg>
+      </div>
+      
+      <!-- Description -->
+      <p class="text-lg text-gray-600 mb-10 max-w-2xl">
+        Whether you are focused on a particular service or just want to explore how we can help, we'd love to hear from you.
+      </p>
+
+      <!-- Main CTA Button -->
+      <button 
+        id="toggle-contact-btn"
+        class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-700 hover:to-blue-700 shadow-lg hover:shadow-xl transition-all"
+      >
+        <span>Get in Touch</span>
+        <svg id="arrow-icon" class="w-5 h-5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Expandable Contact Section -->
+    <div id="contact-details" class="hidden mt-12 opacity-0 transition-opacity duration-500">
+      
+      <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-200">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+          
+          <!-- Left Side - Contact Info -->
+          <div class="space-y-6">
+            
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
+            
+            <!-- Phone -->
+            <a href="tel:+972528152233" class="group flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+              <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <p class="text-sm text-gray-500 mb-1">Call us</p>
+                <p class="text-lg font-semibold text-gray-900 group-hover:text-cyan-600 transition-colors">+972-52-8152233</p>
+              </div>
+            </a>
+
+            <!-- Email -->
+            <a href="mailto:info@rompsyc.com" class="group flex items-start gap-4 p-4 rounded-xl hover:bg-gray-50 transition-colors">
+              <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <p class="text-sm text-gray-500 mb-1">Email us</p>
+                <p class="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors break-all">info@rompsyc.com</p>
+              </div>
+            </a>
+
+            <!-- Office Hours -->
+            <div class="flex items-start gap-4 p-4">
+              <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center shadow-lg">
+                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <p class="text-sm text-gray-500 mb-1">Office hours</p>
+                <p class="text-lg font-semibold text-gray-900">Sun - Thu: 9:00 - 18:00</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Side - Contact Form -->
+          <div>
+            
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
+            
+            <form class="space-y-4">
+              
+              <!-- Name -->
+              <div>
+                <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all outline-none"
+                  placeholder="Your name"
+                />
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all outline-none"
+                  placeholder="your@email.com"
+                />
+              </div>
+
+              <!-- Message -->
+              <div>
+                <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                <textarea 
+                  id="message" 
+                  name="message"
+                  rows="4"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all outline-none resize-none"
+                  placeholder="How can we help you?"
+                ></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button 
+                type="submit"
+                class="w-full px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-700 hover:to-blue-700 shadow-lg hover:shadow-xl transition-all"
+              >
+                Send Message
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
   
   <!-- Main Footer Content -->
@@ -10,7 +166,7 @@
       
       <!-- Brand Column -->
       <div class="md:w-1/4">
-        <!-- Logo - Same size as header -->
+        <!-- Logo -->
         <div class="flex items-center gap-2 mb-4">
           <span class="text-[30px] font-black text-white leading-none">ROM</span>
           <span class="text-gray-400 font-light text-[30px] leading-none">|</span>
@@ -90,18 +246,13 @@
         </h3>
         <ul class="space-y-2.5">
           <li>
-            <a href="/hectic-reality" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
-              Hectic Reality
+            <a href="/about" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+              About Us
             </a>
           </li>
           <li>
-            <a href="/publications" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
-              Publications
-            </a>
-          </li>
-          <li>
-            <a href="/hectic-reality" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
-              Manifest
+            <a href="/team" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+              The Team
             </a>
           </li>
           <li>
@@ -110,8 +261,13 @@
             </a>
           </li>
           <li>
-            <a href="/the-team" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
-              The Team
+            <a href="/hectic-reality" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+              Hectic Reality
+            </a>
+          </li>
+          <li>
+            <a href="/publications" class="text-gray-400 hover:text-cyan-400 transition-colors text-sm">
+              Publications
             </a>
           </li>
         </ul>
@@ -175,3 +331,43 @@
   </div>
 
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('toggle-contact-btn');
+    const contactDetails = document.getElementById('contact-details');
+    const arrowIcon = document.getElementById('arrow-icon');
+    
+    let isOpen = false;
+
+    toggleBtn?.addEventListener('click', () => {
+      isOpen = !isOpen;
+      
+      if (isOpen) {
+        contactDetails?.classList.remove('hidden');
+        setTimeout(() => {
+          contactDetails?.classList.remove('opacity-0');
+          contactDetails?.classList.add('opacity-100');
+        }, 10);
+        
+        arrowIcon?.classList.add('rotate-180');
+        
+        setTimeout(() => {
+          contactDetails?.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'nearest' 
+          });
+        }, 100);
+        
+      } else {
+        contactDetails?.classList.remove('opacity-100');
+        contactDetails?.classList.add('opacity-0');
+        setTimeout(() => {
+          contactDetails?.classList.add('hidden');
+        }, 300);
+        
+        arrowIcon?.classList.remove('rotate-180');
+      }
+    });
+  });
+</script>
