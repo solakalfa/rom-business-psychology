@@ -1,1 +1,29 @@
 @import "tailwindcss";
+
+/* Set Poppins as default font */
+body {
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Typography System - Consistent sizes across all pages */
+h1 {
+  @apply text-5xl md:text-6xl font-bold;
+}
+
+h2 {
+  @apply text-4xl md:text-5xl font-bold;
+}
+
+h3 {
+  @apply text-2xl font-semibold;
+}
+
+/* Large card titles exception */
+.card-title {
+  @apply text-4xl font-bold;
+}
+
+/* Text utilities */
+.text-large {
+  @apply text-xl font-normal;
+}@import "tailwindcss";

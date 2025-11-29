@@ -1,0 +1,128 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PeopleCTA from "../components/cta/PeopleCTA.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Career Development - ROM Business Psychology">
+
+<!-- BREADCRUMB -->
+<section class="bg-gray-50 py-4">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <nav class="flex items-center text-sm text-gray-600">
+      <a href="/" class="hover:text-cyan-600">Home</a>
+      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+      <a href="/personal-counseling" class="hover:text-cyan-600">People</a>
+      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+      <span class="text-gray-900">Career Development</span>
+    </nav>
+  </div>
+</section>
+
+<!-- HERO -->
+<section class="bg-white py-16">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <p class="text-cyan-600 font-semibold text-sm uppercase tracking-wider mb-4">
+      People
+    </p>
+    <h1 class="text-gray-900 mb-6">
+      Career Development
+    </h1>
+    <p class="text-xl text-gray-600 leading-relaxed">
+      About two-thirds of our waking hours are devoted to work. Wisely choosing our career path and developing practical steps for achieving our goals, is an important element for a healthy mental and emotional lives.
+    </p>
+    <p class="text-xl text-gray-600 leading-relaxed mt-4">
+      After dozens of career development processes, we can state that individuals tend to choose their professional path as a reflection of the way they see themselves and the place they think they are entitled. Our job is to empower our consultees and to enhance their sense of security and competence.
+    </p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="bg-gray-50 py-16">
+  <div class="container mx-auto px-6 max-w-4xl">
+    
+    <div class="prose prose-lg max-w-none">
+      
+      <h2 class="text-gray-900 mb-4">Sliding Doors</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        It wasn't so long ago that people believed they should have a job for life. The common view in the employment world was "Till death do us apart." However, in today's fast-paced work environment, people are expected on an average to hold eight different careers over their lifetime (!).
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-8">
+        Like any change, career development involves a gradual growth process. Success is achieved when an appropriate career path is formulated; one that embodies the potential for employment realization, increases the sense of satisfaction from work and meets personal, social, and economic needs.
+      </p>
+
+      <h2 class="text-gray-900 mb-4">Our Offering</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        In our career counseling sessions, strengths, desires and needs are analyzed. We dive into the client's value system, abilities, skills, and experience. We uncover and discuss gaps between the client's current employment state and future expectations.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-8">
+        After clarifying the picture, we formulate a practical work plan for bridging these gaps.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="bg-white py-16">
+  <div class="container mx-auto px-6 max-w-2xl">
+    
+    <div class="text-center mb-12">
+      <h2 class="text-gray-900 mb-4">For more information</h2>
+    </div>
+
+    <form class="space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+            Your name
+          </label>
+          <input 
+            type="text" 
+            id="name"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+          />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+            Your email
+          </label>
+          <input 
+            type="email" 
+            id="email"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+          Your message
+        </label>
+        <textarea 
+          id="message"
+          rows="4"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent resize-none"
+        ></textarea>
+      </div>
+
+      <button 
+        type="submit"
+        class="w-full px-8 py-4 bg-cyan-600 text-white font-semibold rounded-lg hover:bg-cyan-700 transition-colors"
+      >
+        Send
+      </button>
+    </form>
+
+  </div>
+</section>
+
+<Footer />
+
+</Layout>

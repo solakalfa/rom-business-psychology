@@ -1,0 +1,145 @@
+---
+import Layout from "../layouts/Layout.astro";
+import TeamsCTA from "../components/cta/TeamsCTA.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Team Building & Development - ROM Business Psychology">
+
+<!-- BREADCRUMB -->
+<section class="bg-gray-50 py-4">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <nav class="flex items-center text-sm text-gray-600">
+      <a href="/" class="hover:text-cyan-600">Home</a>
+      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+      <a href="/teams" class="hover:text-cyan-600">Teams</a>
+      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+      <span class="text-gray-900">Team Building</span>
+    </nav>
+  </div>
+</section>
+
+<!-- HERO -->
+<section class="bg-white py-16">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <p class="text-cyan-600 font-semibold text-sm uppercase tracking-wider mb-4">
+      Teams
+    </p>
+    <h1 class="text-gray-900 mb-6">
+      Team Building & Development
+    </h1>
+    <p class="text-xl text-gray-600 leading-relaxed">
+      Business leaders often struggle to advance a collaborative culture among their people. Yet, in order to actually promote a genuine team spirit, leaders must first exhibit an excellent role model of cooperation among themselves.
+    </p>
+  </div>
+</section>
+
+<!-- CONTENT GRID -->
+<section class="bg-gray-50 py-16">
+  <div class="container mx-auto px-6 max-w-4xl">
+    
+    <div class="prose prose-lg max-w-none">
+      
+      <!-- High Performance Teams -->
+      <h2 class="text-gray-900 mb-4">High Performance Teams</h2>
+      <p class="text-gray-700 leading-relaxed mb-8">
+        Achieving a high-performance team standard takes work and commitment. Leaders must be fully engaged in the teamwork process and believe this is the right course! Time, managerial attention and resources must be put into place in order to hire the right team members. And finally, consistent managerial capacity should be allocated for the continuous mission of achieving the most from team members.
+      </p>
+
+      <!-- Our Offering -->
+      <h2 class="text-gray-900 mb-4">Our Offering</h2>
+      <p class="text-gray-700 leading-relaxed mb-8">
+        To assist leaders in the critical undertaking of promoting and improving teamwork, we bring to the table our knowledge and experience in building and empowering teams. Knowing that effective teamwork is the building block of healthy organizations; acknowledging the fact that a qualified executive management team is a critical factor for organizational success, we take the team building and development process very seriously.
+      </p>
+
+      <!-- Process -->
+      <h2 class="text-gray-900 mb-4">The Process</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        At the beginning of this process, we conduct a team evaluation that measures important organizational parameters of culture, climate, processes, managerial routines, and human architecture. After analyzing, clarifying and deciding upon the critical issues, we conduct a targeted series of group sessions.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-8">
+        During these meetings, we assist leadership teams in identifying their strengths and challenges, promoting their mutual trust and openness, as well as advancing their knowledge, skills and abilities in teamwork participation and management.
+      </p>
+
+      <!-- Trust Triangle -->
+      <div class="bg-cyan-50 border-l-4 border-cyan-500 p-6 my-8">
+        <h3 class="text-gray-900 mb-3">Trust, Respect & Support</h3>
+        <p class="text-gray-700 leading-relaxed mb-3">
+          Our objective is to enable the team to establish and maintain the sacred triangle of trust, respect and support among themselves.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          We mentor them in conducting systematic data analysis, managing effective discussions, developing robust managerial routines and processes, and executing effective decision-making and implementation mechanisms.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="bg-white py-16">
+  <div class="container mx-auto px-6 max-w-2xl">
+    
+    <div class="text-center mb-12">
+      <h2 class="text-gray-900 mb-4">Get in Touch</h2>
+      <p class="text-lg text-gray-600">
+        Interested in team building? Let's discuss how we can help.
+      </p>
+    </div>
+
+    <form class="space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+            Name
+          </label>
+          <input 
+            type="text" 
+            id="name"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+          />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+            Email
+          </label>
+          <input 
+            type="email" 
+            id="email"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+          Message
+        </label>
+        <textarea 
+          id="message"
+          rows="4"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent resize-none"
+        ></textarea>
+      </div>
+
+      <button 
+        type="submit"
+        class="w-full px-8 py-4 bg-cyan-600 text-white font-semibold rounded-lg hover:bg-cyan-700 transition-colors"
+      >
+        Send Message
+      </button>
+    </form>
+
+  </div>
+</section>
+
+
+<TeamsCTA />
+<Footer />
+</Layout>

@@ -1,0 +1,135 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PeopleCTA from "../components/cta/PeopleCTA.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Emotional Therapy - ROM Business Psychology">
+
+<!-- BREADCRUMB -->
+<section class="bg-gray-50 py-4">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <nav class="flex items-center text-sm text-gray-600">
+      <a href="/" class="hover:text-cyan-600">Home</a>
+      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+      <a href="/personal-counseling" class="hover:text-cyan-600">People</a>
+      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+      <span class="text-gray-900">Emotional Therapy</span>
+    </nav>
+  </div>
+</section>
+
+<!-- HERO -->
+<section class="bg-white py-16">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <p class="text-cyan-600 font-semibold text-sm uppercase tracking-wider mb-4">
+      People
+    </p>
+    <h1 class="text-gray-900 mb-6">
+      Emotional Therapy
+    </h1>
+    <p class="text-xl text-gray-600 leading-relaxed">
+      The modern era introduces numerous challenges regarding self, work, relationships, and family.
+    </p>
+    <p class="text-xl text-gray-600 leading-relaxed mt-4">
+      At the heart of the emotional therapy process is the exploration of emotional resilience, optimism, self-monitoring, work-life-balance and other human experiences.
+    </p>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section class="bg-gray-50 py-16">
+  <div class="container mx-auto px-6 max-w-4xl">
+    
+    <div class="prose prose-lg max-w-none">
+      
+      <h2 class="text-gray-900 mb-4">Creating Relationships</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        The goal of emotional therapy is to provide counseling and support in situations of distress, anxiety and confusion. Seeing a mental health counselor can be an empowering opportunity for exploring emotional needs.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-8">
+        Through a series of therapeutic sessions the client can learns ways of reframing experiences, or upgrading expectations. Through direct yet supportive feedback the client can improve self-awareness and be able to focus on things that ought to be modified.
+      </p>
+
+      <h2 class="text-gray-900 mb-4">Our Offering</h2>
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Sometimes, we need to be more attentive in listening to our inner voice, turning down the volume of negative, weakening internal monologues while connecting ourselves to positive, optimistic thoughts.
+      </p>
+      <p class="text-gray-700 leading-relaxed mb-8">
+        During the session we strive to improve psychological wellness by acknowledging personal strengths and weaknesses, increasing social sensitivity, self-monitoring and behavioral flexibility. Through these sessions our clients are able to gain mental and emotional resiliency.
+      </p>
+
+      <div class="bg-purple-50 border-l-4 border-purple-500 p-6 my-8">
+        <h3 class="text-gray-900 mb-3">Professional Excellence</h3>
+        <p class="text-gray-700 leading-relaxed">
+          The treatment is conducted by Ph.D. level mental health professionals experienced in a diverse set of psychotherapy techniques.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="bg-white py-16">
+  <div class="container mx-auto px-6 max-w-2xl">
+    
+    <div class="text-center mb-12">
+      <h2 class="text-gray-900 mb-4">For more information</h2>
+    </div>
+
+    <form class="space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+            Your name
+          </label>
+          <input 
+            type="text" 
+            id="name"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+          />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+            Your email
+          </label>
+          <input 
+            type="email" 
+            id="email"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+          Your message
+        </label>
+        <textarea 
+          id="message"
+          rows="4"
+          class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-500 focus:border-transparent resize-none"
+        ></textarea>
+      </div>
+
+      <button 
+        type="submit"
+        class="w-full px-8 py-4 bg-cyan-600 text-white font-semibold rounded-lg hover:bg-cyan-700 transition-colors"
+      >
+        Send
+      </button>
+    </form>
+
+  </div>
+</section>
+
+<Footer />
+
+</Layout>

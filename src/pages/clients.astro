@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro";
+import DefaultCTA from "../components/cta/DefaultCTA.astro";
+import Footer from "../components/Footer.astro";
+import { clients } from "../data/clients.js";
+---
+
+<Layout title="Our Clients - ROM Business Psychology">
+
+<!-- BREADCRUMB -->
+<section class="bg-gray-50 py-4">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <nav class="flex items-center text-sm text-gray-600">
+      <a href="/" class="hover:text-cyan-600">Home</a>
+      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+      <span class="text-gray-900">Our Clients</span>
+    </nav>
+  </div>
+</section>
+
+<!-- HERO -->
+<section class="bg-white py-16">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <p class="text-cyan-600 font-semibold text-sm uppercase tracking-wider mb-4">
+      Our Clients
+    </p>
+    <h1 class="text-gray-900 mb-6">
+      Proud to Be Trusted by Amazing Companies
+    </h1>
+    <p class="text-xl text-gray-600 leading-relaxed">
+      Our clients are at the heart of everything we do. We specialize in supporting high-tech, biotech, and pharmaceutical companies and take pride in being a small part of the miracle of the 'Startup Nation'.
+    </p>
+  </div>
+</section>
+
+<!-- LOGOS GRID -->
+<section class="bg-gray-50 py-16">
+  <div class="container mx-auto px-6 max-w-4xl">
+    
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+      {clients.map(client => (
+        <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center justify-center min-h-[100px]">
+          <img 
+            src={client.logo} 
+            alt={client.name}
+            class="max-h-16 max-w-full w-auto object-contain"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<DefaultCTA />
+<Footer />
+
+</Layout>

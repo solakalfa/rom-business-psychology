@@ -4,14 +4,12 @@ import TeamCard from "../components/TeamCard.astro";
 import { getTeamMembers } from "../data/team";
 import { getClients } from "../data/clients";
 
-import TeamsCTA from "../components/cta/TeamsCTA.astro";
-import Footer from "../components/Footer.astro";
-
 const team = await getTeamMembers();
 const clients = await getClients();
 ---
 
 <Layout title="ROM Business Psychology">
+
 <!-- HERO SECTION - UPDATED -->
 <section class="relative min-h-screen flex items-center pt-20">
   <div class="absolute inset-0 bg-black/40 z-10"></div>
@@ -26,7 +24,6 @@ const clients = await getClients();
     <div class="container mx-auto px-6 max-w-4xl">
       <div class="space-y-8">
       
-
         <!-- Main Heading -->
         <h1 class="text-white leading-tight tracking-tight">
           We Translate the
@@ -41,10 +38,72 @@ const clients = await getClients();
           Our mission is to assist leaders in creating spaces where their people can develop and accomplish amazing things.
         </p>
 
-        </div>
-
       </div>
     </div>
+  </div>
+</section>
+
+<!-- =============================================== -->
+<!-- NEW SECTION: OUR PHILOSOPHY (FROM ABOUT PAGE)   -->
+<!-- =============================================== -->
+<section class="bg-white py-20">
+  <div class="container mx-auto px-6 max-w-4xl text-center">
+    
+    <p class="text-xs uppercase tracking-widest text-cyan-600 font-semibold mb-4">
+      Our Philosophy
+    </p>
+
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 leading-tight mb-6">
+      Helping others is our sense of purpose.
+    </h2>
+
+    <p class="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+      We come from within & we bring partnership to the table.
+    </p>
+
+    <p class="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto mt-4">
+      Business Psychology is in our veins.
+    </p>
+
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- NEW SECTION: OUR VALUES (FROM ABOUT PAGE)    -->
+<!-- ============================================ -->
+<section class="bg-gray-50 py-20">
+  <div class="container mx-auto px-6 max-w-4xl">
+
+    <p class="text-xs uppercase tracking-widest text-gray-500 font-semibold mb-4 text-center">
+      Our Values
+    </p>
+
+    <h2 class="text-center text-3xl md:text-4xl font-bold text-gray-900 mb-12">
+      What guides our work
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- Value 1 -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 text-center">
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Self-Discipline</h3>
+        <p class="text-gray-600">We know that self-discipline is the common denominator of success.</p>
+      </div>
+
+      <!-- Value 2 -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 text-center">
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Curiosity</h3>
+        <p class="text-gray-600">We live in a knowledge era, and curiosity drives our growth.</p>
+      </div>
+
+      <!-- Value 3 -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 text-center">
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Results</h3>
+        <p class="text-gray-600">We are focused on outcomes, not intentions.</p>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
@@ -210,9 +269,8 @@ const clients = await getClients();
         memberId="naama" 
       />
 
-      <!-- QUOTE BOX - UPDATED COLORS -->
+      <!-- QUOTE BOX -->
       <div class="relative bg-white border-2 border-gray-200 p-8 rounded-2xl flex items-center justify-center text-center hover:border-cyan-600 transition-colors">
-        <div class="absolute -top-3 -left-3 w-6 h-6 bg-cyan-600 rounded-full"></div>
         <blockquote class="text-lg font-light text-gray-700">
           "When I build a team, I first look for people who love to win."
           <span class="text-sm mt-3 block text-gray-500">— Ross Perot</span>
@@ -232,7 +290,6 @@ const clients = await getClients();
   <div class="container mx-auto px-6 max-w-4xl">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
       
-      <!-- Left Side - Text & CTA -->
       <div>
         <h2 class="text-gray-900 mb-8 leading-tight">
           Proud for being <span class="text-cyan-600">trusted by</span>
@@ -243,11 +300,10 @@ const clients = await getClients();
         </p>
       </div>
 
-      <!-- Right Side - Animated Logo Grid (ALL LOGOS) -->
       <div class="relative h-[500px] overflow-hidden rounded-2xl bg-gradient-to-br from-gray-50 to-white p-6">
         <div class="absolute inset-0 flex flex-col">
           <div class="animate-scroll-up">
-            {/* First Set - All Logos */}
+
             {Array.from({ length: Math.ceil(clients.length / 3) }, (_, i) => (
               <div class="grid grid-cols-3 gap-4 mb-4">
                 {clients.slice(i * 3, i * 3 + 3).map(client => (
@@ -262,7 +318,6 @@ const clients = await getClients();
               </div>
             ))}
             
-            {/* Second Set - Duplicate for infinite scroll */}
             {Array.from({ length: Math.ceil(clients.length / 3) }, (_, i) => (
               <div class="grid grid-cols-3 gap-4 mb-4">
                 {clients.slice(i * 3, i * 3 + 3).map(client => (
@@ -276,12 +331,12 @@ const clients = await getClients();
                 ))}
               </div>
             ))}
+
           </div>
         </div>
 
-        <!-- Gradient Overlays -->
-        <div class="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-white to-transparent z-10 pointer-events-none"></div>
-        <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-white to-transparent z-10"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent z-10"></div>
       </div>
 
     </div>
@@ -293,29 +348,23 @@ const clients = await getClients();
     0% { transform: translateY(0); }
     100% { transform: translateY(-50%); }
   }
-  
   .animate-scroll-up {
     animation: scroll-up 120s linear infinite;
   }
-  
   .animate-scroll-up:hover {
     animation-play-state: paused;
   }
 </style>
 
-<!-- HERO STATEMENT - MINIMAL & CLEAN -->
+<!-- HERO STATEMENT -->
 <section class="relative py-8 bg-white">
-  
-  <!-- Subtle Background Pattern -->
   <div class="absolute inset-0 opacity-[0.03]">
     <div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, rgb(6, 182, 212) 1px, transparent 0); background-size: 32px 32px;"></div>
   </div>
   
-  <!-- Content -->
   <div class="relative z-10 container mx-auto px-6 max-w-4xl">
     <div class="text-center">
       
-      <!-- Main Statement -->
       <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight tracking-tight">
         Strengthen effective performance for
         <span class="relative inline-block mt-2">
@@ -325,24 +374,19 @@ const clients = await getClients();
           <span class="absolute bottom-2 left-0 right-0 h-3 bg-gradient-to-r from-cyan-200/50 via-blue-200/50 to-teal-200/50 -z-0"></span>
         </span>
         <span class="block mt-2">with our services.</span>
-      </h2>
+      </h3>
       
     </div>
   </div>
 </section>
 
-
-
-<!-- PUBLICATIONS & APPROACH - GRADIENT BACKGROUND -->
+<!-- PUBLICATIONS + APPROACH -->
 <section class="relative py-20">
-  <!-- Gradient Background -->
   <div class="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900"></div>
   
-  <!-- Content -->
   <div class="relative z-10 container mx-auto px-6 max-w-4xl">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
       
-      <!-- Left - Publications -->
       <div class="text-center lg:text-left">
         <p class="text-xs uppercase tracking-widest text-cyan-400 mb-4 font-semibold">
           Publications
@@ -353,13 +397,10 @@ const clients = await getClients();
         </h2>
         
         <p class="text-lg text-gray-300 mb-8 leading-relaxed">
-          There is nothing more useful than a good theory. Explore our original material and inpriational works.
+          There is nothing more useful than a good theory. Explore our original material and inspirational works.
         </p>
         
-        <a 
-          href="/publications" 
-          class="inline-flex items-center gap-2 px-8 py-3 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors"
-        >
+        <a href="/publications" class="inline-flex items-center gap-2 px-8 py-3 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors">
           Sharpen Your Axe
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -367,7 +408,6 @@ const clients = await getClients();
         </a>
       </div>
 
-      <!-- Right - Our Approach -->
       <div class="text-center lg:text-left">
         <p class="text-xs uppercase tracking-widest text-blue-400 mb-4 font-semibold">
           Our Approach
@@ -381,10 +421,7 @@ const clients = await getClients();
           Translating the Human Operating System (HOS) into leadership principles that convert to simple solutions.
         </p>
         
-        <a 
-          href="/approach" 
-          class="inline-flex items-center gap-2 px-8 py-3 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors"
-        >
+        <a href="/approach" class="inline-flex items-center gap-2 px-8 py-3 bg-white text-gray-900 font-medium rounded-lg hover:bg-gray-100 transition-colors">
           Read more
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -396,29 +433,22 @@ const clients = await getClients();
   </div>
 </section>
 
-<!-- CONTACT CTA - MINIMAL & CLEAN -->
+<!-- CONTACT CTA -->
 <section class="relative py-20 bg-gradient-to-br from-slate-50 to-blue-50">
   <div class="container mx-auto px-6 max-w-4xl">
     
-    <!-- Main Content -->
     <div class="text-center">
-      
-      
 
-      <!-- Heading -->
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-5">
         Can we be of any assistance?
       </h2>
       
-      <!-- Description -->
       <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
         Whether you are focused on a particular service or just want to explore how we can help, we'd love to hear from you.
       </p>
 
-      <!-- Contact Methods - Simple Row -->
       <div class="flex flex-wrap justify-center gap-4 mb-10">
         
-        <!-- Phone -->
         <a href="tel:+972-3-XXX-XXXX" class="flex items-center gap-3 px-6 py-3 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-200">
           <div class="w-10 h-10 bg-cyan-600 rounded-lg flex items-center justify-center">
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -431,7 +461,6 @@ const clients = await getClients();
           </div>
         </a>
 
-        <!-- Email -->
         <a href="mailto:info@rompsyc.com" class="flex items-center gap-3 px-6 py-3 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow border border-gray-200">
           <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
             <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -446,11 +475,7 @@ const clients = await getClients();
 
       </div>
 
-      <!-- Main CTA - Simple -->
-      <a 
-        href="/contact" 
-        class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-700 hover:to-blue-700 shadow-lg transition-all"
-      >
+      <a href="/contact" class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white font-semibold rounded-xl hover:from-cyan-700 hover:to-blue-700 shadow-lg transition-all">
         Get in Touch
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -462,7 +487,55 @@ const clients = await getClients();
   </div>
 </section>
 
+<!-- FOOTER -->
+<footer class="bg-gray-900 text-white py-16">
+  <div class="container mx-auto px-6 max-w-5xl">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+      
+      <div>
+        <h3 class="text-xl font-semibold mb-4">
+          ROM BUSINESS PSYCHOLOGY
+        </h3>
+        <p class="text-gray-300 text-base leading-relaxed mb-4">
+          An Israeli-based consulting firm, owned & managed by Dr. Eldad Rom.
+        </p>
+        <p class="text-gray-300 text-base leading-relaxed">
+          Delivering business psychology training & counseling for leaders and teams.
+        </p>
+      </div>
 
+      <div>
+        <h3 class="text-xl font-semibold mb-4">
+          Services
+        </h3>
+        <ul class="space-y-2 text-gray-300 text-base">
+          <li><a href="/teams" class="hover:text-white transition-colors">Teams</a></li>
+          <li><a href="/people" class="hover:text-white transition-colors">People</a></li>
+          <li><a href="/publications" class="hover:text-white transition-colors">Publications</a></li>
+          <li><a href="/approach" class="hover:text-white transition-colors">Our Approach</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-xl font-semibold mb-4">
+          Contact us
+        </h3>
+        <ul class="space-y-2 text-gray-300 text-base">
+          <li>Email: info@rompsyc.com</li>
+          <li>Phone: +972-3-XXX-XXXX</li>
+          <li>Tel Aviv, Israel</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="border-t border-gray-700 pt-8 text-center">
+      <p class="text-gray-400 text-sm">
+        COPYRIGHT ©2024 ROM BUSINESS PSYCHOLOGY. ALL RIGHTS RESERVED.
+      </p>
+    </div>
+  </div>
+</footer>
 
 <!-- Popup Container -->
 <div id="popup-container"></div>
@@ -474,11 +547,9 @@ const clients = await getClients();
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
-  
   .animate-scroll {
     animation: scroll 40s linear infinite;
   }
-  
   .animate-scroll:hover {
     animation-play-state: paused;
   }
@@ -489,33 +560,23 @@ const clients = await getClients();
     const buttons = document.querySelectorAll('[data-member-id]');
     const container = document.getElementById('popup-container');
     
-    if (!container) {
-      console.error('Popup container not found');
-      return;
-    }
+    if (!container) return;
 
     buttons.forEach(button => {
       button.addEventListener('click', async () => {
         const memberId = button.getAttribute('data-member-id');
-        console.log('Clicked member:', memberId);
         
         try {
-          // Get member data from team.js
           const { getTeamMembers } = await import('../data/team.js');
           const teamData = await getTeamMembers();
-          const member = teamData[memberId]; // 👈 זה השינוי! אובייקט ולא מערך
+          const member = teamData[memberId];
           
-          if (!member) {
-            console.error('Member not found:', memberId);
-            return;
-          }
-          
-          // Create popup
+          if (!member) return;
+
           container.innerHTML = `
             <div class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" id="popup-backdrop">
               <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
                 
-                <!-- Header -->
                 <div class="sticky top-0 bg-gradient-to-r from-cyan-600 to-blue-600 text-white p-6 flex items-center justify-between">
                   <div class="flex items-center gap-4">
                     <img src="${member.image}" alt="${member.name}" class="w-16 h-16 rounded-full object-cover border-2 border-white" />
@@ -531,7 +592,6 @@ const clients = await getClients();
                   </button>
                 </div>
                 
-                <!-- Content -->
                 <div class="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
                   <p class="text-gray-700 leading-relaxed whitespace-pre-line">${member.bio}</p>
                   
@@ -550,18 +610,13 @@ const clients = await getClients();
             </div>
           `;
           
-          // Close handlers
           const closeBtn = document.getElementById('close-popup');
           const backdrop = document.getElementById('popup-backdrop');
           
-          const closePopup = () => {
-            container.innerHTML = '';
-          };
+          const closePopup = () => container.innerHTML = '';
           
           closeBtn?.addEventListener('click', closePopup);
-          backdrop?.addEventListener('click', (e) => {
-            if (e.target === backdrop) closePopup();
-          });
+          backdrop?.addEventListener('click', e => e.target === backdrop && closePopup());
           
           document.addEventListener('keydown', function escHandler(e) {
             if (e.key === 'Escape') {
@@ -577,8 +632,3 @@ const clients = await getClients();
     });
   });
 </script>
-
-
-<TeamsCTA />
-<Footer />
-</Layout>

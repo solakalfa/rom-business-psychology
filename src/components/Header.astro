@@ -1,0 +1,214 @@
+---
+// src/components/Header.astro
+---
+
+<header class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-200">
+  <nav class="container mx-auto px-6 max-w-4xl">
+    <div class="flex items-center justify-between h-20">
+      
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-2">
+        <span class="text-[30px] font-black text-gray-900 leading-none">ROM</span>
+        <span class="text-gray-400 font-light text-[30px] leading-none">|</span>
+        <div class="flex flex-col justify-between" style="height: 1.9rem;">
+          <span class="text-[14px] font-semibold text-gray-900 tracking-tight leading-none">BUSINESS</span>
+          <span class="text-[14px] font-semibold text-gray-900 tracking-tight leading-none">PSYCHOLOGY</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        
+        <!-- Teams Dropdown -->
+        <div class="relative group">
+          <a href="/teams-counseling" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors flex items-center gap-1">
+            Teams
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </a>
+          <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <a href="/teams-counseling" class="block px-6 py-3 text-cyan-600 font-semibold bg-cyan-50 hover:bg-cyan-100 transition-colors first:rounded-t-lg">Team Overview</a>
+            <a href="/team-building-and-development" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-cyan-600 transition-colors">Building & Development</a>
+            <a href="/management-skills" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-cyan-600 transition-colors">Management Skills</a>
+            <a href="/mentoring-task-force" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-cyan-600 transition-colors last:rounded-b-lg">Mentoring Task Force</a>
+          </div>
+        </div>
+
+        <!-- People Dropdown -->
+        <div class="relative group">
+          <a href="/personal-counseling" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors flex items-center gap-1">
+            People
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </a>
+          <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <a href="/personal-counseling" class="block px-6 py-3 text-cyan-600 font-semibold bg-cyan-50 hover:bg-cyan-100 transition-colors first:rounded-t-lg">People Overview</a>
+            <a href="/executive-coaching" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-cyan-600 transition-colors">Executive Coaching</a>
+            <a href="/career-development" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-cyan-600 transition-colors">Career Development</a>
+            <a href="/emotional-therapy" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-cyan-600 transition-colors last:rounded-b-lg">Emotional Therapy</a>
+          </div>
+        </div>
+
+        <!-- About Dropdown -->
+        <div class="relative group">
+          <button class="text-gray-700 hover:text-cyan-600 font-medium transition-colors flex items-center gap-1">
+            About
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <a href="/hectic-reality" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-cyan-600 transition-colors first:rounded-t-lg">Manifest</a>
+            <a href="/clients" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-cyan-600 transition-colors">Clients</a>
+            <a href="/the-team" class="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-cyan-600 transition-colors last:rounded-b-lg">The Team</a>
+          </div>
+        </div>
+
+        <a href="/hectic-reality" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">Hectic</a>
+        <a href="/publications" class="text-gray-700 hover:text-cyan-600 font-medium transition-colors">Publications</a>
+      </div>
+
+      <!-- Mobile Menu Button - Modern Icon -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-gray-900 hover:text-cyan-600 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-white transform translate-x-full transition-transform duration-300 md:hidden">
+  <div class="flex flex-col h-full">
+    
+    <!-- Mobile Header with Close Button -->
+    <div class="flex items-center justify-between px-6 h-20 border-b border-gray-200">
+      <div class="flex items-center gap-2">
+        <span class="text-[22px] font-black text-gray-900 leading-none">ROM</span>
+        <span class="text-gray-400 font-light text-[22px] leading-none">|</span>
+        <div class="flex flex-col justify-between" style="height: 1.4rem;">
+          <span class="text-[10px] font-semibold text-gray-900 tracking-tight leading-none">BUSINESS</span>
+          <span class="text-[10px] font-semibold text-gray-900 tracking-tight leading-none">PSYCHOLOGY</span>
+        </div>
+      </div>
+      <button id="mobile-menu-close" class="p-2 text-gray-900 hover:text-cyan-600 transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav class="flex-1 overflow-y-auto px-6 py-8">
+      
+      <!-- Contact Info in Mobile Menu -->
+      <div class="mb-8 pb-8 border-b border-gray-200">
+        <h3 class="text-gray-900 font-semibold text-sm uppercase tracking-wider mb-4">Contact</h3>
+        <div class="space-y-3">
+          <a href="mailto:info@rompsyc.com" class="text-gray-600 hover:text-cyan-600 transition-colors text-sm flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            info@rompsyc.com
+          </a>
+          <a href="tel:+972528152233" class="text-gray-600 hover:text-cyan-600 transition-colors text-sm flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            +972-52-8152233
+          </a>
+        </div>
+      </div>
+      
+      <!-- Teams Section -->
+      <div class="mb-6">
+        <button class="mobile-dropdown-btn w-full flex items-center justify-between text-gray-900 font-semibold text-lg mb-3">
+          Teams
+          <svg class="w-5 h-5 transform transition-transform dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="mobile-dropdown-content hidden pl-4 space-y-2">
+          <a href="/teams-counseling" class="block py-2 px-3 text-cyan-600 font-semibold bg-cyan-50 rounded hover:bg-cyan-100">Team Overview</a>
+          <a href="/team-building-and-development" class="block py-2 text-gray-600 hover:text-cyan-600">Building & Development</a>
+          <a href="/management-skills" class="block py-2 text-gray-600 hover:text-cyan-600">Management Skills</a>
+          <a href="/mentoring-task-force" class="block py-2 text-gray-600 hover:text-cyan-600">Mentoring Task Force</a>
+        </div>
+      </div>
+
+      <!-- People Section -->
+      <div class="mb-6">
+        <button class="mobile-dropdown-btn w-full flex items-center justify-between text-gray-900 font-semibold text-lg mb-3">
+          People
+          <svg class="w-5 h-5 transform transition-transform dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="mobile-dropdown-content hidden pl-4 space-y-2">
+          <a href="/personal-counseling" class="block py-2 px-3 text-cyan-600 font-semibold bg-cyan-50 rounded hover:bg-cyan-100">People Overview</a>
+          <a href="/executive-coaching" class="block py-2 text-gray-600 hover:text-cyan-600">Executive Coaching</a>
+          <a href="/career-development" class="block py-2 text-gray-600 hover:text-cyan-600">Career Development</a>
+          <a href="/emotional-therapy" class="block py-2 text-gray-600 hover:text-cyan-600">Emotional Therapy</a>
+        </div>
+      </div>
+
+      <!-- About Section -->
+      <div class="mb-6">
+        <button class="mobile-dropdown-btn w-full flex items-center justify-between text-gray-900 font-semibold text-lg mb-3">
+          About
+          <svg class="w-5 h-5 transform transition-transform dropdown-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        <div class="mobile-dropdown-content hidden pl-4 space-y-2">
+          <a href="/hectic-reality" class="block py-2 text-gray-600 hover:text-cyan-600">Manifest</a>
+          <a href="/clients" class="block py-2 text-gray-600 hover:text-cyan-600">Clients</a>
+          <a href="/the-team" class="block py-2 text-gray-600 hover:text-cyan-600">The Team</a>
+        </div>
+      </div>
+
+      <a href="/hectic-reality" class="block py-3 text-gray-900 font-semibold text-lg">Hectic</a>
+      <a href="/publications" class="block py-3 text-gray-900 font-semibold text-lg">Publications</a>
+    </nav>
+  </div>
+</div>
+
+<!-- Overlay Background (closes menu on click) -->
+<div id="mobile-overlay" class="fixed inset-0 bg-black/50 z-30 opacity-0 invisible transition-opacity duration-300 md:hidden"></div>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  const mobileOverlay = document.getElementById('mobile-overlay');
+
+  function openMobileMenu() {
+    mobileMenu?.classList.remove('translate-x-full');
+    mobileOverlay?.classList.remove('invisible', 'opacity-0');
+  }
+
+  function closeMobileMenu() {
+    mobileMenu?.classList.add('translate-x-full');
+    mobileOverlay?.classList.add('invisible', 'opacity-0');
+  }
+
+  mobileMenuBtn?.addEventListener('click', openMobileMenu);
+  mobileMenuClose?.addEventListener('click', closeMobileMenu);
+  mobileOverlay?.addEventListener('click', closeMobileMenu);
+
+  // Mobile dropdowns
+  const dropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+  dropdownBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const arrow = btn.querySelector('.dropdown-arrow');
+      
+      content?.classList.toggle('hidden');
+      arrow?.classList.toggle('rotate-180');
+    });
+  });
+</script>
