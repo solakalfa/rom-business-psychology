@@ -131,25 +131,15 @@ const clients = await getClients();
   </div>
 </section>
 
-<!-- TEAM TEASER - Single Image + Blue Card -->
+
+<!-- TEAM TEASER - Blue Card Left + Small Image Right -->
 <section class="py-16 bg-gray-50">
   <div class="container mx-auto px-6 max-w-4xl">
     
-    <div class="grid md:grid-cols-2 gap-6 items-stretch">
+    <div class="grid md:grid-cols-3 gap-6 items-stretch">
       
-      <!-- Left Side - Image -->
-      <div class="relative h-full">
-        <div class="relative overflow-hidden rounded-3xl bg-white shadow-2xl h-full">
-          <img 
-            src="/team/dreldadrom.jpeg" 
-            alt="Dr. Eldad Rom" 
-            class="w-full h-full object-cover"
-          />
-        </div>
-      </div>
-
-      <!-- Right Side - Blue Card -->
-      <div class="bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl p-8 lg:p-10 shadow-2xl flex flex-col justify-center">
+      <!-- Left - 2 columns = Blue Card -->
+      <div class="md:col-span-2 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-3xl p-8 lg:p-10 shadow-2xl flex flex-col justify-center">
         
         <div class="text-white space-y-6">
           
@@ -199,12 +189,30 @@ const clients = await getClients();
 
       </div>
 
+      <!-- Right - 1 column = Image with Name Overlay -->
+      <div class="relative h-full min-h-[400px]">
+        <div class="relative overflow-hidden rounded-3xl bg-white shadow-2xl h-full">
+          
+          <!-- Image -->
+          <img 
+            src="/team/dreldadrom.jpeg" 
+            alt="Dr. Eldad Rom" 
+            class="w-full h-full object-cover"
+          />
+          
+          <!-- Black Overlay at Bottom with Name -->
+          <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/90 to-transparent pt-12 pb-6 px-6">
+            <h3 class="text-white text-xl font-bold mb-1">Dr. Eldad Rom</h3>
+            <p class="text-cyan-400 text-sm font-semibold uppercase tracking-wider">Founder & CEO</p>
+          </div>
+
+        </div>
+      </div>
+
     </div>
 
   </div>
 </section>
-
-
 
 <!-- OFFERING STATEMENT - UPDATED COLORS -->
 <section class="bg-white py-16">
