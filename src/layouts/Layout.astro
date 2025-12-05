@@ -9,9 +9,12 @@ import Header from "../components/Header.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <title>ROM Business Psychology</title>
   </head>
 
@@ -19,4 +22,12 @@ import Header from "../components/Header.astro";
     <Header />
     <slot />
   </body>
+  <script is:inline>
+    // Check for newfont query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get("newfont") === "true") {
+      // Apply Georgia/serif to entire site
+      document.body.style.fontFamily = "Georgia, 'Times New Roman', serif";
+    }
+  </script>
 </html>
