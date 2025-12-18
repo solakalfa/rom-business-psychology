@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Header from "../components/Header.astro";
+import Drawer from "../components/Drawer.astro";
 ---
 
 <html lang="en">
@@ -18,16 +19,9 @@ import Header from "../components/Header.astro";
     <title>ROM Business Psychology</title>
   </head>
 
-  <body class="min-h-screen">
+  <body class="min-h-screen bg-white font-['Poppins']">
     <Header />
-    <slot />
+    <Drawer />
+    <main><slot /></main>
   </body>
-  <script is:inline>
-    // Check for newfont query parameter
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get("newfont") === "true") {
-      // Apply Georgia/serif to entire site
-      document.body.style.fontFamily = "Georgia, 'Times New Roman', serif";
-    }
-  </script>
 </html>

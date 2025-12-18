@@ -11,7 +11,7 @@ const TEAM_DATA = {
     id: "eldad",
     name: "Eldad Rom (Ph.D.)",
     role: "Founder & CEO",
-    image: "/team/dr-eldad-rom.jpg",
+    image: "/team/dreldadrom.jpeg",
     email: "eldad@rompsyc.com",
     bio: `Eldad is the owner of ROM Business Psychology. He is a certified psychologist and has extensive experience in leadership and organizational development.
 

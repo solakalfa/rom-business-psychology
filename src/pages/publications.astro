@@ -3,135 +3,157 @@ import Layout from "../layouts/Layout.astro";
 import Footer from "../components/Footer.astro";
 import { publications } from "../data/publications";
 
-const categories = ['All', 'People', 'Teams', 'Quotes', 'Uncategorized'];
+const categories = ["All", "People", "Teams", "Quotes", "Uncategorized"];
 ---
 
 <Layout title="Publications - ROM Business Psychology">
+  <section
+    class="relative h-[42vh] flex items-center overflow-hidden bg-[#0f172a] font-['Poppins']"
+  >
+    <img
+      src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920&h=1080&fit=crop&q=80"
+      alt="Publications"
+      class="absolute inset-0 w-full h-full object-cover opacity-20 grayscale"
+    />
+    <div class="absolute inset-0 bg-black/40"></div>
 
-<!-- HERO -->
-<!-- HERO -->
-<section class="relative min-h-[60vh] overflow-hidden">
-  <img 
-    src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920&h=1080&fit=crop&q=80" 
-    alt="Publications"
-    class="absolute inset-0 w-full h-full object-cover"
-  />
-  <div class="absolute inset-0 bg-black/70"></div>
-  
-  <div class="absolute inset-0 z-10 flex items-center">
-    <div class="container mx-auto px-6 max-w-4xl">
-      <p class="text-white text-2xl font-light leading-relaxed">
-        "There is nothing more practical than a good theory."<br/>
-        (Kurt Lewin)
-      </p>
-      <p class="text-white text-lg mt-6 font-light">
-        Continuous learning is our core value. We welcome you to our knowledge journey.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-<!-- INTRO TEXT -->
-<section class="bg-white py-16">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <p class="text-cyan-600 font-semibold text-sm uppercase tracking-wider mb-4">
-      Publications
-    </p>
-    <h1 class="text-gray-900 mb-6">
-      Sharpen your AXE
-    </h1>
-    <p class="text-lg text-gray-600 leading-relaxed">
-      Explore here some of our original work and interviews. Also, we periodically upload here inspirational books and videos. Please do let us know what you think, share with us your inspirational materials.
-    </p>
-  </div>
-</section>
-
-<!-- MAIN CONTENT -->
-<section class="bg-gray-50 py-16">
-  <div class="container mx-auto px-6 max-w-4xl">
-
-    <!-- Categories Filter -->
-    <div class="mb-12 border-b border-gray-200">
-      <nav class="flex gap-6 overflow-x-auto pb-4">
-        {categories.map(category => (
-          <button 
-            class="category-btn whitespace-nowrap px-4 py-2 text-gray-600 hover:text-cyan-600 transition-colors border-b-2 border-transparent hover:border-cyan-600"
-            data-category={category}
-          >
-            {category}
-          </button>
-        ))}
-      </nav>
-    </div>
-
-    <!-- Publications Grid -->
-    <div class="grid grid-cols-1 gap-6" id="publications-grid">
-      {publications.map(pub => (
-        <article 
-          class="publication-card bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition-shadow text-center"
-          data-category={pub.category}
+    <div class="absolute inset-0 z-10 flex items-center">
+      <div class="container mx-auto px-6 max-w-[896px]">
+        <p
+          class="text-white text-xl md:text-[26px] font-light leading-relaxed tracking-tight"
         >
-          <div class="inline-block px-3 py-1 bg-cyan-100 text-cyan-700 text-xs font-semibold rounded-full mb-4">
-            {pub.category}
-          </div>
-          
-          <h3 class="text-gray-900 mb-3">
-            {pub.title}
-          </h3>
-          
-          <p class="text-gray-600 leading-relaxed mb-6 max-w-3xl mx-auto">
-            {pub.excerpt}
-          </p>
-          
-          <a 
-            href={pub.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center text-cyan-600 font-semibold hover:text-cyan-700 transition-colors"
+          "There is nothing more practical than a good theory."<br />
+          <span
+            class="text-xs tracking-[0.2em] uppercase opacity-50 font-medium"
+            >— Kurt Lewin</span
           >
-            לקריאת המאמר
-            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
-            </svg>
-          </a>
-        </article>
-      ))}
+        </p>
+        <p
+          class="text-slate-400 text-sm md:text-base mt-6 font-light max-w-lg opacity-80"
+        >
+          Continuous learning is our core value. <br />
+          We welcome you to our knowledge journey.
+        </p>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <section class="bg-white py-20 border-b border-gray-100">
+    <div class="container mx-auto px-6 max-w-[896px]">
+      <p
+        class="text-cyan-600 font-bold text-[10px] uppercase tracking-[0.2em] mb-4"
+      >
+        Knowledge Base
+      </p>
+      <h2
+        class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 tracking-tight"
+      >
+        Sharpen your AXE
+      </h2>
+      <p class="text-lg text-gray-500 font-light leading-relaxed max-w-3xl">
+        Explore here some of our original work and interviews. Also, we
+        periodically upload here inspirational books and videos. Please do let
+        us know what you think, share with us your inspirational materials.
+      </p>
+    </div>
+  </section>
 
+  <section class="bg-gray-50/50 py-16">
+    <div class="container mx-auto px-6 max-w-[896px]">
+      <div class="mb-12 border-b border-gray-200">
+        <nav class="flex gap-8 overflow-x-auto pb-4">
+          {
+            categories.map((category) => (
+              <button
+                class="category-btn whitespace-nowrap text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-cyan-600 transition-all border-b-2 border-transparent hover:border-cyan-600 pb-2"
+                data-category={category}
+              >
+                {category}
+              </button>
+            ))
+          }
+        </nav>
+      </div>
 
-<Footer />
+      <div class="grid grid-cols-1 gap-8" id="publications-grid">
+        {
+          publications.map((pub) => (
+            <article
+              class="publication-card bg-white border border-gray-200 rounded-2xl p-10 hover:shadow-xl hover:shadow-cyan-900/5 transition-all group"
+              data-category={pub.category}
+            >
+              <div class="flex flex-col items-center text-center">
+                <div class="inline-block px-3 py-1 bg-cyan-50 text-cyan-600 text-[10px] font-bold uppercase tracking-widest rounded-full mb-6">
+                  {pub.category}
+                </div>
 
-<script>
-  const categoryBtns = document.querySelectorAll('.category-btn');
-  const publicationCards = document.querySelectorAll('.publication-card');
+                <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-4 group-hover:text-cyan-600 transition-colors">
+                  {pub.title}
+                </h3>
 
-  categoryBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const category = btn.getAttribute('data-category');
-      
-      categoryBtns.forEach(b => {
-        b.classList.remove('text-cyan-600', 'border-cyan-600');
-        b.classList.add('text-gray-600', 'border-transparent');
-      });
-      btn.classList.remove('text-gray-600', 'border-transparent');
-      btn.classList.add('text-cyan-600', 'border-cyan-600');
+                <p class="text-gray-500 font-light leading-relaxed mb-8 max-w-2xl">
+                  {pub.excerpt}
+                </p>
 
-      publicationCards.forEach(card => {
-        const cardCategory = card.getAttribute('data-category');
-        if (category === 'All' || cardCategory === category) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
+                <a
+                  href={pub.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-cyan-600 font-bold text-xs uppercase tracking-widest hover:gap-4 transition-all"
+                >
+                  Read Article
+                  <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2.5"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          ))
         }
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+
+  <script>
+    const categoryBtns = document.querySelectorAll(".category-btn");
+    const publicationCards = document.querySelectorAll(".publication-card");
+
+    categoryBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const category = btn.getAttribute("data-category");
+
+        categoryBtns.forEach((b) => {
+          b.classList.remove("text-cyan-600", "border-cyan-600");
+          b.classList.add("text-gray-400", "border-transparent");
+        });
+        btn.classList.remove("text-gray-400", "border-transparent");
+        btn.classList.add("text-cyan-600", "border-cyan-600");
+
+        publicationCards.forEach((card) => {
+          const cardCategory = card.getAttribute("data-category");
+          if (category === "All" || cardCategory === category) {
+            (card as HTMLElement).style.display = "block";
+          } else {
+            (card as HTMLElement).style.display = "none";
+          }
+        });
       });
     });
-  });
 
-  categoryBtns[0].classList.add('text-cyan-600', 'border-cyan-600');
-</script>
-
+    if (categoryBtns[0]) {
+      categoryBtns[0].classList.add("text-cyan-600", "border-cyan-600");
+    }
+  </script>
 </Layout>

@@ -1,0 +1,291 @@
+---
+// src/components/Drawer.astro
+---
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+
+<div class="drawer font-['Poppins']" id="drawer">
+  <div class="drawer-content">
+    <button class="drawer-close" id="drawerClose">×</button>
+
+    <nav class="drawer-nav">
+      <a href="/about" class="nav-link-main highlight">Value Proposition</a>
+
+      <div class="nav-group">
+        <a href="/teams-counseling" class="nav-link-main">Teams</a>
+        <div class="nav-sublinks">
+          <a href="/team-building-and-development" class="nav-sublink"
+            >Building & Development</a
+          >
+          <a href="/management-skills" class="nav-sublink">Management Skills</a>
+          <a href="/mentoring-task-force" class="nav-sublink"
+            >Mentoring Task Force</a
+          >
+        </div>
+      </div>
+
+      <div class="nav-group">
+        <a href="/personal-counseling" class="nav-link-main">People</a>
+        <div class="nav-sublinks">
+          <a href="/executive-coaching" class="nav-sublink"
+            >Executive Coaching</a
+          >
+          <a href="/career-development" class="nav-sublink"
+            >Career Development</a
+          >
+          <a href="/emotional-therapy" class="nav-sublink">Emotional Therapy</a>
+        </div>
+      </div>
+
+      <a href="/clients" class="nav-link-main">Our Clients</a>
+      <a href="/team" class="nav-link-main">Meet the Family</a>
+      <a href="/publications" class="nav-link-main">Publications</a>
+    </nav>
+
+    <div class="drawer-footer">
+      <div class="divider"></div>
+      <div class="contact-section">
+        <h4 class="contact-title">Get in Touch</h4>
+        <div class="contact-info">
+          <a href="tel:+972528152233" class="contact-item"
+            >📞 +972 52-815-2233</a
+          >
+          <a href="mailto:info@rompsyc.com" class="contact-item"
+            >✉️ info@rompsyc.com</a
+          >
+        </div>
+
+        <form class="drawer-form">
+          <input type="email" placeholder="Email Address" required />
+          <textarea placeholder="How can we help?" rows="3" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+      <a href="mailto:info@rompsyc.com" class="footer-email">ROM PSYC • 2025</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+    z-index: 150;
+  }
+  .drawer-overlay.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .drawer {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.98); /* מעט יותר אטום לקריאות */
+    backdrop-filter: blur(20px);
+    z-index: 200;
+    transition: right 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden; /* המגירה עצמה לא גוללת */
+  }
+  .drawer.open {
+    right: 0 !important;
+  }
+
+  .drawer-content {
+    max-width: 896px;
+    margin: 0 auto;
+    padding: 120px 24px 80px;
+    height: 100%;
+    /* כאן קורה הקסם - הגלילה היא פנימית */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* הסתרת פס גלילה מכוער בדפדפנים מסוימים */
+  .drawer-content::-webkit-scrollbar {
+    width: 4px;
+  }
+  .drawer-content::-webkit-scrollbar-thumb {
+    background: rgba(34, 211, 238, 0.2);
+    border-radius: 10px;
+  }
+
+  .drawer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    flex-shrink: 0; /* מונע מהתפריט להתכווץ */
+  }
+
+  .nav-link-main {
+    font-size: 26px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+    text-align: left;
+  }
+
+  .nav-link-main.highlight {
+    color: #22d3ee;
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .nav-sublinks {
+    margin-top: 15px;
+    padding-left: 20px;
+    border-left: 1px solid rgba(34, 211, 238, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-sublink {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .drawer-close {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 210;
+  }
+
+  .drawer-footer {
+    width: 100%;
+    margin-top: 60px;
+    padding-bottom: 40px;
+    flex-shrink: 0;
+  }
+
+  .divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin-bottom: 40px;
+  }
+
+  .contact-section {
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 400px;
+  }
+  .contact-title {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+  }
+  .contact-item {
+    color: #22d3ee;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  .drawer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .drawer-form input,
+  .drawer-form textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+  }
+  .drawer-form button {
+    background: #22d3ee;
+    color: #0f172a;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+  }
+  .drawer-form button:hover {
+    background: white;
+  }
+
+  .footer-email {
+    color: rgba(255, 255, 255, 0.3);
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  @media (max-width: 896px) {
+    .drawer-content {
+      padding-top: 100px;
+    }
+  }
+</style>
+
+<script>
+  const drawer = document.getElementById("drawer");
+  const overlay = document.getElementById("drawerOverlay");
+  const closeBtn = document.getElementById("drawerClose");
+
+  function openDrawer() {
+    drawer?.classList.add("open");
+    overlay?.classList.add("open");
+    document.body.style.overflow = "hidden";
+    window.dispatchEvent(
+      new CustomEvent("menuStateChanged", { detail: { isOpen: true } })
+    );
+  }
+
+  function closeDrawer() {
+    drawer?.classList.remove("open");
+    overlay?.classList.remove("open");
+    document.body.style.overflow = "";
+    window.dispatchEvent(
+      new CustomEvent("menuStateChanged", { detail: { isOpen: false } })
+    );
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && drawer?.classList.contains("open")) {
+      closeDrawer();
+    }
+  });
+
+  window.addEventListener("toggleMenu", () => {
+    drawer?.classList.contains("open") ? closeDrawer() : openDrawer();
+  });
+
+  closeBtn?.addEventListener("click", closeDrawer);
+  overlay?.addEventListener("click", closeDrawer);
+</script>

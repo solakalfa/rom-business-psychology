@@ -176,12 +176,13 @@ const CLIENTS_DATA = [
 ];
 
 /**
- * Get all clients
- * TODO: Replace with Sanity query when ready
+ * Get all clients - Sorted Alphabetically (A-Z)
  */
 export async function getClients() {
-  return CLIENTS_DATA;
-  
+  return [...CLIENTS_DATA].sort((a, b) =>
+    a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+  );
+
   // SANITY VERSION (uncomment when ready):
   // const query = `*[_type == "client"] | order(name asc) {
   //   "id": slug.current,
@@ -191,4 +192,7 @@ export async function getClients() {
   // return await sanityClient.fetch(query);
 }
 
-export const clients = CLIENTS_DATA;
+// Exporting sorted array for direct usage in pages
+export const clients = [...CLIENTS_DATA].sort((a, b) =>
+  a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+);
