@@ -1,0 +1,69 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import { researchPapers } from "../data/research";
+---
+
+<Layout title="Academic Research - ROM Business Psychology">
+  <!-- HERO -->
+
+  <section class="bg-white py-20">
+    <div class="container mx-auto px-6 max-w-4xl text-center">
+      <h1 class="text-gray-900 mb-6">Academic Research</h1>
+      <p class="text-gray-600 text-xl leading-relaxed">
+        Peer-reviewed publications exploring organizational psychology,
+        leadership, and team dynamics
+      </p>
+    </div>
+  </section>
+  <!-- RESEARCH PAPERS -->
+  <section class="bg-white py-16">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <div class="space-y-8">
+        {
+          researchPapers.map((paper) => (
+            <article class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:border-cyan-500 hover:shadow-xl transition-all duration-300">
+              <h3 class="text-2xl font-bold text-gray-900 mb-4 leading-tight">
+                {paper.title}
+              </h3>
+
+              <p class="text-gray-700 mb-4 leading-relaxed">{paper.abstract}</p>
+
+              <div class="mb-4">
+                <p class="text-sm text-gray-600">
+                  <strong>Authors:</strong> {paper.authors}
+                </p>
+                <p class="text-sm text-gray-600 mt-1">
+                  <strong>Keywords:</strong> {paper.keywords}
+                </p>
+              </div>
+
+              <a
+                href={paper.pdfFile}
+                target="_blank"
+                class="inline-flex items-center px-6 py-3 bg-cyan-600 text-white font-semibold rounded-lg hover:bg-cyan-700 transition-colors"
+              >
+                <svg
+                  class="w-5 h-5 ml-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  />
+                </svg>
+                Download Full Paper
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
