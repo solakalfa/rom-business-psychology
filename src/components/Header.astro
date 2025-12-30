@@ -29,46 +29,43 @@
 </header>
 
 <style>
- /* בתוך Header.astro */
 .header-dark {
   background: #0f172a;
-  position: fixed; /* שינוי מ-sticky ל-fixed */
+  position: fixed;
   top: 0;
-  left: 0; /* הוספת איפוס לצדדים */
-  z-index: 250;
+  left: 0;
+  /* העלינו ל-400 כדי שיהיה מעל המגירה (שהיא 300) */
+  z-index: 400; 
   width: 100%;
   transition: background 0.4s ease;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* הוספת קו הפרדה עדין */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-  .header-content {
-    max-width: 896px;
-    margin: 0 auto;
-    padding: 0 20px; /* תיקון: מגן על המבורגר מהקצה במובייל */
-    display: flex;
-    align-items: center;
-    height: 90px;
-  }
+.header-content {
+  max-width: 896px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  height: 90px;
+}
 
-  .logo-wrapper {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between; /* דוחף את ההמבורגר לקצה השני */
-    gap: 12px; 
-  }
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  gap: 12px; 
+}
 
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 12px; /* תיקון: צמצום המרחק מהקו המפריד */
-    text-decoration: none;
-  }
-
-  /* בתוך ה-style של Header.astro, שנה את הערכים האלו: */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* ריווח מאוזן יותר */
+  text-decoration: none;
+}
 
 .logo-rom {
-  /* הגדלנו את המינימום מ-32px ל-38px (כ-15%+) */
   font-size: clamp(38px, 9vw, 52px); 
   font-weight: 900;
   line-height: 1;
@@ -76,94 +73,88 @@
   color: white;
 }
 
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  /* צמצום ה-gap כדי שהמילים יתפרסו על פני כל גובה הלוגו */
+  gap: 0px; 
+}
+
 .logo-text span {
-  /* הגדלנו את הטקסט הקטן מ-9px ל-10.5px */
-  font-size: clamp(10.5px, 2.5vw, 11px);
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.7);
+  /* הגדלנו בערך ב-15% והשתמשנו ב-font-weight חזק יותר לנוכחות */
+  font-size: clamp(12px, 2.8vw, 15px);
+  font-weight: 400; 
+  color: rgba(255, 255, 255, 0.9);
   letter-spacing: 2px;
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 .logo-divider {
-  /* הגבהנו מעט את הקו המפריד שיתאים לטקסט הגדול יותר */
   width: 1px;
-  height: 44px; 
+  height: 48px; /* הגבהנו מעט שיתאים לטקסט החדש */
   background: rgba(255, 255, 255, 0.15);
 }
 
-  .text-cyan-400 {
-    color: #22d3ee;
-  }
+/* שאר הסטייל (menu-btn, nav-icon וכו') נשאר ללא שינוי */
+.text-cyan-400 { color: #22d3ee; }
 
- 
+.menu-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
 
-  .logo-text {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-  }
+.nav-icon {
+  width: 20px;
+  height: 14px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 
-  
+.nav-icon span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  /* כפתור ההמבורגר החדשני */
-  .menu-btn {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    cursor: pointer;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    flex-shrink: 0; /* מונע מהכפתור להתכווץ */
-  }
+.nav-icon span:last-child {
+  width: 65%;
+  align-self: flex-end;
+}
 
-  .nav-icon {
-    width: 20px;
-    height: 14px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
+.nav-icon.open span:first-child {
+  transform: translateY(6px) rotate(45deg);
+}
 
-  .nav-icon span {
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: white;
-    border-radius: 2px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
+.nav-icon.open span:last-child {
+  transform: translateY(-6px) rotate(-45deg);
+  width: 100%;
+}
 
-  .nav-icon span:last-child {
-    width: 65%;
-    align-self: flex-end;
-  }
+@keyframes attention-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+  5% { transform: scale(1.05) rotate(2deg); box-shadow: 0 0 15px 2px rgba(34, 211, 238, 0.2); }
+  10% { transform: scale(1.05) rotate(-2deg); }
+  15% { transform: scale(1.05) rotate(0deg); }
+  20% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+}
 
-  .nav-icon.open span:first-child {
-    transform: translateY(6px) rotate(45deg);
-  }
-
-  .nav-icon.open span:last-child {
-    transform: translateY(-6px) rotate(-45deg);
-    width: 100%;
-  }
-
-  @keyframes attention-pulse {
-    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
-    5% { transform: scale(1.05) rotate(2deg); box-shadow: 0 0 15px 2px rgba(34, 211, 238, 0.2); }
-    10% { transform: scale(1.05) rotate(-2deg); }
-    15% { transform: scale(1.05) rotate(0deg); }
-    20% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
-  }
-
-  .animate-attention {
-    animation: attention-pulse 6s infinite;
-  }
+.animate-attention {
+  animation: attention-pulse 6s infinite;
+}
 </style>
 
 <script>
