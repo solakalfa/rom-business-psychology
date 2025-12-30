@@ -5,22 +5,26 @@
 <header class="header-dark font-['Poppins']">
   <div class="header-content">
     <div class="logo-wrapper">
-  <a href="/" class="logo">
-    <div class="logo-rom">ROM<span class="text-cyan-400">.</span></div>
-    <div class="logo-divider"></div>
-    <div class="logo-text">
-      <span>BUSINESS</span>
-      <span>PSYCHOLOGY</span>
-    </div>
-  </a>
+      <a href="/" class="logo">
+        <div class="logo-rom">ROM<span class="text-cyan-400">.</span></div>
+        <div class="logo-divider"></div>
+        <div class="logo-text">
+          <span>BUSINESS</span>
+          <span>PSYCHOLOGY</span>
+        </div>
+      </a>
 
-  <button class="menu-btn animate-attention" id="menuBtn" aria-label="Open menu">
-    <div class="nav-icon" id="menuIcon">
-      <span></span>
-      <span></span>
+      <button
+        class="menu-btn animate-attention"
+        id="menuBtn"
+        aria-label="Open menu"
+      >
+        <div class="nav-icon" id="menuIcon">
+          <span></span>
+          <span></span>
+        </div>
+      </button>
     </div>
-  </button>
-</div>
   </div>
 </header>
 
@@ -37,37 +41,42 @@
   .header-content {
     max-width: 896px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 20px; /* תיקון: מגן על המבורגר מהקצה במובייל */
     display: flex;
     align-items: center;
     height: 90px;
   }
 
-  /* יישור הלוגו וההמבורגר יחד */
   .logo-wrapper {
     display: flex;
     align-items: center;
-    gap: 32px; /* המרחק בין הלוגו לכפתור */
+    width: 100%;
+    justify-content: space-between; /* דוחף את ההמבורגר לקצה השני */
+    gap: 12px; 
   }
 
   .logo {
     display: flex;
     align-items: center;
-    gap: 24px;
+    gap: 12px; /* תיקון: צמצום המרחק מהקו המפריד */
     text-decoration: none;
   }
 
   .logo-rom {
-    font-size: 52px;
+    font-size: clamp(32px, 8vw, 52px); /* לוגו גמיש שלא דוחף את ההמבורגר */
     font-weight: 900;
     line-height: 1;
     letter-spacing: -2px;
     color: white;
   }
 
+  .text-cyan-400 {
+    color: #22d3ee;
+  }
+
   .logo-divider {
     width: 1px;
-    height: 45px;
+    height: 40px;
     background: rgba(255, 255, 255, 0.15);
   }
 
@@ -75,67 +84,31 @@
     display: flex;
     flex-direction: column;
     gap: 1px;
-    margin-right: 8px; /* אקסטרה רווח לפני הכפתור */
   }
 
   .logo-text span {
-    font-size: 11px;
+    font-size: clamp(9px, 2vw, 11px);
     font-weight: 400;
     color: rgba(255, 255, 255, 0.7);
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     line-height: 1.4;
   }
 
-  /* עיצוב כפתור ההמבורגר */
+  /* כפתור ההמבורגר החדשני */
   .menu-btn {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     cursor: pointer;
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* מונע מהכפתור להתכווץ */
   }
 
-  /* אנימציית תשומת לב - רטט והילה עדינה */
-  @keyframes attention-pulse {
-    0%,
-    100% {
-      transform: scale(1);
-      box-shadow: 0 0 0 0 rgba(34, 211, 238, 0);
-    }
-    5% {
-      transform: scale(1.05) rotate(2deg);
-      box-shadow: 0 0 15px 2px rgba(34, 211, 238, 0.2);
-    }
-    10% {
-      transform: scale(1.05) rotate(-2deg);
-    }
-    15% {
-      transform: scale(1.05) rotate(0deg);
-    }
-    20% {
-      transform: scale(1);
-      box-shadow: 0 0 0 0 rgba(34, 211, 238, 0);
-    }
-  }
-
-  .animate-attention {
-    animation: attention-pulse 6s infinite;
-  }
-
-  .menu-btn:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(34, 211, 238, 0.4);
-    transform: translateY(-2px);
-    animation: none; /* מפסיק לרטוט כשנוגעים בו */
-  }
-
-  /* אייקון המבורגר חדשני */
   .nav-icon {
     width: 20px;
     height: 14px;
@@ -154,16 +127,13 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  /* הקו התחתון קצר יותר למראה א-סימטרי חדשני */
   .nav-icon span:last-child {
     width: 65%;
     align-self: flex-end;
   }
 
-  /* אנימציה לפתיחה - הפיכה ל-X */
   .nav-icon.open span:first-child {
     transform: translateY(6px) rotate(45deg);
-    width: 100%;
   }
 
   .nav-icon.open span:last-child {
@@ -171,9 +141,16 @@
     width: 100%;
   }
 
-  /* נקודה כחולה בלוגו */
-  .text-cyan-400 {
-    color: #22d3ee;
+  @keyframes attention-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+    5% { transform: scale(1.05) rotate(2deg); box-shadow: 0 0 15px 2px rgba(34, 211, 238, 0.2); }
+    10% { transform: scale(1.05) rotate(-2deg); }
+    15% { transform: scale(1.05) rotate(0deg); }
+    20% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
+  }
+
+  .animate-attention {
+    animation: attention-pulse 6s infinite;
   }
 </style>
 
@@ -188,7 +165,6 @@
 
     window.addEventListener("menuStateChanged", ((e: CustomEvent) => {
       menuIcon.classList.toggle("open", e.detail.isOpen);
-      // מפסיק את האנימציה כשהתפריט פתוח
       if (e.detail.isOpen) {
         menuBtn.classList.remove("animate-attention");
       } else {
