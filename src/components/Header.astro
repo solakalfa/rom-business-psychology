@@ -62,23 +62,38 @@
     text-decoration: none;
   }
 
-  .logo-rom {
-    font-size: clamp(32px, 8vw, 52px); /* לוגו גמיש שלא דוחף את ההמבורגר */
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -2px;
-    color: white;
-  }
+  /* בתוך ה-style של Header.astro, שנה את הערכים האלו: */
+
+.logo-rom {
+  /* הגדלנו את המינימום מ-32px ל-38px (כ-15%+) */
+  font-size: clamp(38px, 9vw, 52px); 
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: white;
+}
+
+.logo-text span {
+  /* הגדלנו את הטקסט הקטן מ-9px ל-10.5px */
+  font-size: clamp(10.5px, 2.5vw, 11px);
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 2px;
+  line-height: 1.4;
+}
+
+.logo-divider {
+  /* הגבהנו מעט את הקו המפריד שיתאים לטקסט הגדול יותר */
+  width: 1px;
+  height: 44px; 
+  background: rgba(255, 255, 255, 0.15);
+}
 
   .text-cyan-400 {
     color: #22d3ee;
   }
 
-  .logo-divider {
-    width: 1px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.15);
-  }
+ 
 
   .logo-text {
     display: flex;
@@ -86,13 +101,7 @@
     gap: 1px;
   }
 
-  .logo-text span {
-    font-size: clamp(9px, 2vw, 11px);
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.7);
-    letter-spacing: 2px;
-    line-height: 1.4;
-  }
+  
 
   /* כפתור ההמבורגר החדשני */
   .menu-btn {
