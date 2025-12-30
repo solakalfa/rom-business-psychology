@@ -21,75 +21,36 @@ const clients = await getClients();
 
 <Layout title="ROM Business Psychology">
 
-  <section class="relative h-screen flex items-center -mt-[90px]">
+  <section class="relative min-h-[100svh] flex items-center py-24 md:py-0 -mt-[90px]">
+  <div class="absolute inset-0 bg-black/50 z-10"></div>
 
-    <div class="absolute inset-0 bg-black/40 z-10"></div>
+  <img
+    src="/images/hero-bg.webp"
+    class="absolute inset-0 w-full h-full object-cover object-center z-0"
+    alt="Hero background"
+  />
 
+  <div class="relative z-20 w-full pt-[90px]">
+    <div class="container mx-auto px-6 max-w-4xl">
+      <div class="space-y-6 md:space-y-8">
+        <h1 class="text-white leading-[1.1] tracking-tight text-[2.5rem] sm:text-5xl md:text-7xl font-bold">
+          We Translate the
+          <span class="block mt-2 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500 bg-clip-text text-transparent font-extrabold italic">
+            Human Operating System
+          </span>
+          into Simple Leadership Solutions
+        </h1>
 
-
-    <img
-
-      src="/images/hero-bg.webp"
-
-      class="absolute inset-0 w-full h-full object-cover object-[center_65%] z-0"
-
-      alt="Hero background"
-
-    />
-
-
-
-    <div class="relative z-20 w-full pt-[90px]">
-
-      <div class="container mx-auto px-6 max-w-4xl">
-
-        <div class="space-y-8">
-
-          <h1
-
-            class="text-white leading-tight tracking-tight"
-
-            style="font-size: 3.5rem; font-weight: 700;"
-
-          >
-
-            We Translate the
-
-            <span
-
-              class="block mt-2 bg-gradient-to-r from-blue-300 via-blue-400 to-blue-500 bg-clip-text text-transparent font-extrabold"
-
-            >
-
-              Human Operating System
-
-            </span>
-
-            into Simple Leadership Solutions
-
-          </h1>
-
-
-
-          <p
-
-            class="text-white/90 text-xl md:text-2xl font-light leading-relaxed max-w-3xl"
-
-          >
-
-            Our mission is to assist leaders in creating spaces where their
-
-            people can develop and accomplish amazing things.
-
-          </p>
-
-        </div>
-
+        <p class="text-white/90 text-lg md:text-2xl font-light leading-relaxed max-w-3xl">
+          Our mission is to assist leaders in creating spaces where their
+          people can develop and accomplish amazing things.
+        </p>
       </div>
-
     </div>
+  </div>
+</section>
 
-  </section>
+ 
 
 
 

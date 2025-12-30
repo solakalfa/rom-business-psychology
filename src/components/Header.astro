@@ -5,27 +5,22 @@
 <header class="header-dark font-['Poppins']">
   <div class="header-content">
     <div class="logo-wrapper">
-      <a href="/" class="logo">
-        <div class="logo-rom">ROM</div>
-        <div class="logo-divider"></div>
-        <div class="logo-text">
-          <span>BUSINESS</span>
-          <span>PSYCHOLOGY</span>
-        </div>
-      </a>
-
-      <button
-        class="menu-btn animate-attention"
-        id="menuBtn"
-        aria-label="Open menu"
-      >
-        <div class="menu-icon" id="menuIcon">
-          <div class="dot"></div>
-          <div class="dot dot-small"></div>
-          <div class="dot"></div>
-        </div>
-      </button>
+  <a href="/" class="logo">
+    <div class="logo-rom">ROM<span class="text-cyan-400">.</span></div>
+    <div class="logo-divider"></div>
+    <div class="logo-text">
+      <span>BUSINESS</span>
+      <span>PSYCHOLOGY</span>
     </div>
+  </a>
+
+  <button class="menu-btn animate-attention" id="menuBtn" aria-label="Open menu">
+    <div class="nav-icon" id="menuIcon">
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+</div>
   </div>
 </header>
 
@@ -140,60 +135,45 @@
     animation: none; /* מפסיק לרטוט כשנוגעים בו */
   }
 
-  .menu-icon {
-    position: relative;
+  /* אייקון המבורגר חדשני */
+  .nav-icon {
     width: 20px;
-    height: 20px;
+    height: 14px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
-  .dot {
-    position: absolute;
-    width: 5px;
-    height: 5px;
-    background: white;
-    border-radius: 50%;
-    transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-  }
-
-  .dot-small {
-    width: 3.5px;
-    height: 3.5px;
-    background: #22d3ee; /* נקודה קטנה בצבע המותג למשיכת עין */
-  }
-
-  .dot:nth-child(1) {
-    top: 0;
-    left: 0;
-  }
-  .dot:nth-child(2) {
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-  }
-  .dot:nth-child(3) {
-    bottom: 0;
-    left: 0;
-  }
-
-  /* אנימציה לפתיחה */
-  .menu-icon.open .dot {
-    width: 18px;
+  .nav-icon span {
+    display: block;
+    width: 100%;
     height: 2px;
+    background-color: white;
     border-radius: 2px;
-    background: white;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .menu-icon.open .dot:nth-child(1) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
+
+  /* הקו התחתון קצר יותר למראה א-סימטרי חדשני */
+  .nav-icon span:last-child {
+    width: 65%;
+    align-self: flex-end;
   }
-  .menu-icon.open .dot:nth-child(2) {
-    opacity: 0;
+
+  /* אנימציה לפתיחה - הפיכה ל-X */
+  .nav-icon.open span:first-child {
+    transform: translateY(6px) rotate(45deg);
+    width: 100%;
   }
-  .menu-icon.open .dot:nth-child(3) {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
+
+  .nav-icon.open span:last-child {
+    transform: translateY(-6px) rotate(-45deg);
+    width: 100%;
+  }
+
+  /* נקודה כחולה בלוגו */
+  .text-cyan-400 {
+    color: #22d3ee;
   }
 </style>
 

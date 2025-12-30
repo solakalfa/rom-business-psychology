@@ -7,7 +7,7 @@ import Drawer from "../components/Drawer.astro";
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,6 +17,31 @@ import Drawer from "../components/Drawer.astro";
       rel="stylesheet"
     />
     <title>ROM Business Psychology</title>
+
+    <style is:global>
+      /* מניעת גלילה רוחבית וייצוב האתר במובייל */
+      html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* תיקון מוודא שתוכן העמוד תמיד ברוחב הנכון */
+      main {
+        width: 100%;
+        overflow-x: hidden;
+        display: block;
+      }
+
+      /* מניעת קפיצות של ה-Drawer במובייל */
+      body.drawer-open {
+        overflow: hidden;
+      }
+    </style>
   </head>
 
   <body class="min-h-screen bg-white font-['Poppins']">
