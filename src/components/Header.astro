@@ -29,14 +29,17 @@
 </header>
 
 <style>
-  .header-dark {
-    background: #0f172a;
-    position: sticky;
-    top: 0;
-    z-index: 250;
-    width: 100%;
-    transition: background 0.4s ease;
-  }
+ /* בתוך Header.astro */
+.header-dark {
+  background: #0f172a;
+  position: fixed; /* שינוי מ-sticky ל-fixed */
+  top: 0;
+  left: 0; /* הוספת איפוס לצדדים */
+  z-index: 250;
+  width: 100%;
+  transition: background 0.4s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* הוספת קו הפרדה עדין */
+}
 
   .header-content {
     max-width: 896px;

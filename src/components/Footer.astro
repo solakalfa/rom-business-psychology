@@ -229,14 +229,14 @@
 </footer>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("contact-form") as HTMLFormElement;
-    const submitBtn = document.getElementById(
-      "submit-btn"
-    ) as HTMLButtonElement;
-    const successMessage = document.getElementById("success-message");
+  // פונקציה שמטפלת בכל טופס בנפרד
+  const handleFormSubmission = async (form) => {
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const successMessage = form.nextElementSibling; // מוצא את הודעת ההצלחה שמתחת לטופס
+    
+    if (!submitBtn) return;
 
-    form?.addEventListener("submit", async (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
       submitBtn.disabled = true;
       const originalText = submitBtn.innerText;
@@ -251,9 +251,12 @@
           },
           body: JSON.stringify(Object.fromEntries(new FormData(form))),
         });
+        
         if (response.ok) {
           form.classList.add("hidden");
-          successMessage?.classList.remove("hidden");
+          if (successMessage) successMessage.classList.remove("hidden");
+        } else {
+          throw new Error("Failed to send");
         }
       } catch (err) {
         submitBtn.innerText = "ERROR";
@@ -263,5 +266,9 @@
         }, 2000);
       }
     });
-  });
+  };
+
+  // הפעלה על כל הטפסים בדף (גם פוטר וגם Drawer)
+  const forms = document.querySelectorAll('form[id^="contact-form"], .drawer-form');
+  forms.forEach(form => handleFormSubmission(form));
 </script>
