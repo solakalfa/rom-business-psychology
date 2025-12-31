@@ -35,7 +35,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 400; /* נשאר מעל המגירה שהיא 300 */
+  z-index: 500; 
   width: 100%;
   transition: background 0.4s ease;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -48,17 +48,17 @@
   display: flex;
   align-items: center;
   height: 90px;
+  position: relative;
+  z-index: 501;
 }
 
 .logo-wrapper {
   display: flex;
   align-items: center;
   width: 100%;
-  /* מובייל: פיזור לקצוות כדי למנוע צפיפות ליד הלוגו */
   justify-content: space-between; 
 }
 
-/* דסקטופ: הצמדה מעוצבת ללוגו */
 @media (min-width: 768px) {
   .logo-wrapper {
     justify-content: flex-start; 
@@ -71,6 +71,8 @@
   align-items: center;
   gap: 16px;
   text-decoration: none;
+  position: relative;
+  z-index: 502;
 }
 
 .logo-rom {
@@ -115,6 +117,8 @@
   justify-content: center;
   transition: all 0.3s ease;
   flex-shrink: 0;
+  position: relative;
+  z-index: 505;
 }
 
 .nav-icon {
@@ -130,30 +134,24 @@
   display: block;
   height: 2px;
   border-radius: 2px;
+  background-color: white; 
   transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
-/* קו עליון - קטן ומיושר לשמאל */
 .nav-icon span:first-child {
   width: 60%;
   align-self: flex-start;
-  background-color: white;
 }
 
-/* קו אמצעי - קוצר ב-10% (90%) וצבעוני */
 .nav-icon span:nth-child(2) {
   width: 90%; 
-  background-color: #22d3ee;
 }
 
-/* קו תחתון - קטן ומיושר לימין */
 .nav-icon span:last-child {
   width: 60%;
   align-self: flex-end;
-  background-color: white;
 }
 
-/* אנימציית X מהממת */
 .nav-icon.open span:nth-child(2) {
   opacity: 0;
   transform: scaleX(0);
@@ -161,13 +159,11 @@
 
 .nav-icon.open span:first-child {
   width: 100%;
-  background-color: white;
   transform: translateY(8px) rotate(45deg);
 }
 
 .nav-icon.open span:last-child {
   width: 100%;
-  background-color: white;
   transform: translateY(-8px) rotate(-45deg);
 }
 
@@ -183,3 +179,26 @@
   animation: attention-pulse 6s infinite;
 }
 </style>
+
+<script>
+  // הסקריפט שמפעיל את הלחיצה
+  const menuBtn = document.getElementById("menuBtn");
+  const menuIcon = document.getElementById("menuIcon");
+
+  if (menuBtn && menuIcon) {
+    // לחיצה על הכפתור שולחת אירוע למגירה להיפתח
+    menuBtn.addEventListener("click", () => {
+      window.dispatchEvent(new CustomEvent("toggleMenu"));
+    });
+
+    // הקשבה לאירוע מהמגירה כדי לשנות את האייקון ל-X
+    window.addEventListener("menuStateChanged", ((e: CustomEvent) => {
+      menuIcon.classList.toggle("open", e.detail.isOpen);
+      if (e.detail.isOpen) {
+        menuBtn.classList.remove("animate-attention");
+      } else {
+        menuBtn.classList.add("animate-attention");
+      }
+    }) as EventListener);
+  }
+</script>
