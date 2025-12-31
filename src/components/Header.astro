@@ -22,6 +22,7 @@
         <div class="nav-icon" id="menuIcon">
           <span></span>
           <span></span>
+          <span></span>
         </div>
       </button>
     </div>
@@ -34,7 +35,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  /* העלינו ל-400 כדי שיהיה מעל המגירה (שהיא 300) */
   z-index: 400; 
   width: 100%;
   transition: background 0.4s ease;
@@ -54,14 +54,15 @@
   display: flex;
   align-items: center;
   width: 100%;
-  justify-content: space-between;
-  gap: 12px; 
+  /* שינוי: הצמדה לצד שמאל (או ימין ב-LTR) במקום פיזור לקצוות */
+  justify-content: flex-start; 
+  gap: 32px; /* רווח קבוע ומרשים בין הלוגו להמבורגר */
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 16px; /* ריווח מאוזן יותר */
+  gap: 16px;
   text-decoration: none;
 }
 
@@ -76,12 +77,10 @@
 .logo-text {
   display: flex;
   flex-direction: column;
-  /* צמצום ה-gap כדי שהמילים יתפרסו על פני כל גובה הלוגו */
   gap: 0px; 
 }
 
 .logo-text span {
-  /* הגדלנו בערך ב-15% והשתמשנו ב-font-weight חזק יותר לנוכחות */
   font-size: clamp(12px, 2.8vw, 15px);
   font-weight: 400; 
   color: rgba(255, 255, 255, 0.9);
@@ -91,11 +90,10 @@
 
 .logo-divider {
   width: 1px;
-  height: 48px; /* הגבהנו מעט שיתאים לטקסט החדש */
+  height: 48px;
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* שאר הסטייל (menu-btn, nav-icon וכו') נשאר ללא שינוי */
 .text-cyan-400 { color: #22d3ee; }
 
 .menu-btn {
@@ -113,35 +111,56 @@
 }
 
 .nav-icon {
-  width: 20px;
-  height: 14px;
+  width: 26px;
+  height: 18px;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  /* הסרנו את ה-align-items הגלובלי כי כל קו מיושר אחרת */
 }
 
 .nav-icon span {
   display: block;
-  width: 100%;
   height: 2px;
-  background-color: white;
   border-radius: 2px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
+/* קו עליון - קטן (60%) ומיושר לשמאל */
+.nav-icon span:first-child {
+  width: 60%;
+  align-self: flex-start;
+  background-color: white;
+}
+
+/* קו אמצעי - שלם (100%) וצבעוני */
+.nav-icon span:nth-child(2) {
+  width: 100%;
+  background-color: #22d3ee; /* צבע Cyan של המותג */
+}
+
+/* קו תחתון - קטן (60%) ומיושר לימין */
 .nav-icon span:last-child {
-  width: 65%;
+  width: 60%;
   align-self: flex-end;
+  background-color: white;
+}
+
+/* אנימציית X שתתחבר למרכז */
+.nav-icon.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
 }
 
 .nav-icon.open span:first-child {
-  transform: translateY(6px) rotate(45deg);
+  width: 100%;
+  transform: translateY(8px) rotate(45deg);
 }
 
 .nav-icon.open span:last-child {
-  transform: translateY(-6px) rotate(-45deg);
   width: 100%;
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 @keyframes attention-pulse {
