@@ -35,7 +35,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 400; 
+  z-index: 400; /* נשאר מעל המגירה שהיא 300 */
   width: 100%;
   transition: background 0.4s ease;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -54,9 +54,16 @@
   display: flex;
   align-items: center;
   width: 100%;
-  /* שינוי: הצמדה לצד שמאל (או ימין ב-LTR) במקום פיזור לקצוות */
-  justify-content: flex-start; 
-  gap: 32px; /* רווח קבוע ומרשים בין הלוגו להמבורגר */
+  /* מובייל: פיזור לקצוות כדי למנוע צפיפות ליד הלוגו */
+  justify-content: space-between; 
+}
+
+/* דסקטופ: הצמדה מעוצבת ללוגו */
+@media (min-width: 768px) {
+  .logo-wrapper {
+    justify-content: flex-start; 
+    gap: 32px; 
+  }
 }
 
 .logo {
@@ -117,7 +124,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* הסרנו את ה-align-items הגלובלי כי כל קו מיושר אחרת */
 }
 
 .nav-icon span {
@@ -127,27 +133,27 @@
   transition: all 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 }
 
-/* קו עליון - קטן (60%) ומיושר לשמאל */
+/* קו עליון - קטן ומיושר לשמאל */
 .nav-icon span:first-child {
   width: 60%;
   align-self: flex-start;
   background-color: white;
 }
 
-/* קו אמצעי - שלם (100%) וצבעוני */
+/* קו אמצעי - קוצר ב-10% (90%) וצבעוני */
 .nav-icon span:nth-child(2) {
-  width: 100%;
-  background-color: #22d3ee; /* צבע Cyan של המותג */
+  width: 90%; 
+  background-color: #22d3ee;
 }
 
-/* קו תחתון - קטן (60%) ומיושר לימין */
+/* קו תחתון - קטן ומיושר לימין */
 .nav-icon span:last-child {
   width: 60%;
   align-self: flex-end;
   background-color: white;
 }
 
-/* אנימציית X שתתחבר למרכז */
+/* אנימציית X מהממת */
 .nav-icon.open span:nth-child(2) {
   opacity: 0;
   transform: scaleX(0);
@@ -155,11 +161,13 @@
 
 .nav-icon.open span:first-child {
   width: 100%;
+  background-color: white;
   transform: translateY(8px) rotate(45deg);
 }
 
 .nav-icon.open span:last-child {
   width: 100%;
+  background-color: white;
   transform: translateY(-8px) rotate(-45deg);
 }
 
@@ -175,23 +183,3 @@
   animation: attention-pulse 6s infinite;
 }
 </style>
-
-<script>
-  const menuBtn = document.getElementById("menuBtn");
-  const menuIcon = document.getElementById("menuIcon");
-
-  if (menuBtn && menuIcon) {
-    menuBtn.addEventListener("click", () => {
-      window.dispatchEvent(new CustomEvent("toggleMenu"));
-    });
-
-    window.addEventListener("menuStateChanged", ((e: CustomEvent) => {
-      menuIcon.classList.toggle("open", e.detail.isOpen);
-      if (e.detail.isOpen) {
-        menuBtn.classList.remove("animate-attention");
-      } else {
-        menuBtn.classList.add("animate-attention");
-      }
-    }) as EventListener);
-  }
-</script>
