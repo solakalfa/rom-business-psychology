@@ -9,19 +9,19 @@
     <button class="drawer-close" id="drawerClose" aria-label="Close menu">×</button>
 
     <div class="drawer-grid">
-      <nav class="nav-services">
-        <div class="nav-group">
-          <a href="/teams-counseling" class="nav-link-main">Teams</a>
-          <div class="nav-sublinks">
-            <a href="/team-building-and-development" class="nav-sublink">Building & Development</a>
-            <a href="/management-skills" class="nav-sublink">Management Skills</a>
-            <a href="/mentoring-task-force" class="nav-sublink">Mentoring Task Force</a>
-          </div>
+      <nav class="nav-column">
+        <span class="nav-label">Teams</span>
+        <div class="nav-sublinks">
+          <a href="/teams-counseling" class="nav-sublink highlight-sub">Overview</a>
+          <a href="/team-building-and-development" class="nav-sublink">Building & Development</a>
+          <a href="/management-skills" class="nav-sublink">Management Skills</a>
+          <a href="/mentoring-task-force" class="nav-sublink">Mentoring Task Force</a>
         </div>
-
-        <div class="nav-group">
-          <a href="/personal-counseling" class="nav-link-main">People</a>
+        
+        <div class="nav-group-spacing">
+          <span class="nav-label">Individuals</span>
           <div class="nav-sublinks">
+            <a href="/personal-counseling" class="nav-sublink highlight-sub">Overview</a>
             <a href="/executive-coaching" class="nav-sublink">Executive Coaching</a>
             <a href="/career-development" class="nav-sublink">Career Development</a>
             <a href="/emotional-therapy" class="nav-sublink">Emotional Therapy</a>
@@ -29,22 +29,29 @@
         </div>
       </nav>
 
-      <nav class="nav-site">
-        <a href="/" class="nav-link-main highlight">Home</a>
-        <a href="/clients" class="nav-link-main small">Our Clients</a>
-        <a href="/team" class="nav-link-main small">Meet the Family</a>
-        <a href="/publications" class="nav-link-main small">Publications</a>
-        <a href="/research" class="nav-link-main small">Research</a>
+      <nav class="nav-column">
+        <span class="nav-label">About Us</span>
+        <div class="nav-sublinks">
+          <a href="/" class="nav-sublink highlight-sub">Home</a>
+          <a href="/clients" class="nav-sublink">Our Clients</a>
+          <a href="/team" class="nav-sublink">Meet the Family</a>
+          <a href="/publications" class="nav-sublink">Publications</a>
+          <a href="/research" class="nav-sublink">Research</a>
+        </div>
       </nav>
 
-      <aside class="drawer-contact">
+      <aside class="nav-column">
         <div class="contact-box">
-          <h4 class="contact-title">Get in Touch</h4>
+          <div class="contact-header">
+            <h4 class="contact-title">Get in Touch</h4>
+            <a href="https://www.linkedin.com/in/eldad-rom-727836/" target="_blank" class="linkedin-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+          </div>
           <div class="contact-quick">
             <a href="tel:+972528152233">📞 +972 52-815-2233</a>
             <a href="mailto:info@rompsyc.com">✉️ info@rompsyc.com</a>
           </div>
-
           <form id="drawer-exclusive-form" class="compact-form">
             <input type="hidden" name="access_key" value="a4820d70-9146-4472-8991-86089ba18989" />
             <input type="email" name="email" placeholder="Email" required />
@@ -61,108 +68,76 @@
 </div>
 
 <style>
-  .drawer-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(8px);
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.4s;
-    z-index: 280; /* מעל ההדר */
-  }
+  .drawer-overlay { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(8px); opacity: 0; visibility: hidden; transition: 0.4s; z-index: 280; }
   .drawer-overlay.open { opacity: 1; visibility: visible; }
 
-  .drawer {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100vw;
-    height: 100vh;
-    background: #0f172a;
-    z-index: 300; /* מעל הכל */
-    transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
+  .drawer { position: fixed; top: 0; right: -100%; width: 100vw; height: 100vh; background: #0f172a; z-index: 300; transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
   .drawer.open { right: 0 !important; }
 
   .drawer-container {
-    max-width: 896px;
+    max-width: 896px; /* תואם בדיוק ל-Header */
     margin: 0 auto;
-    padding: 40px 24px;
+    padding: 140px 20px 60px; /* יישור פדינג ללוגו (20px) */
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Valign Middle */
+    justify-content: center;
   }
 
   .drawer-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1.2fr;
-    gap: 30px;
+    gap: 40px;
+    align-items: start; /* יישור כל הטורים להתחלה (אותו גובה) */
   }
 
-  .nav-link-main {
-    font-size: 22px;
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
+  .nav-column { display: flex; flex-direction: column; }
+  .nav-group-spacing { margin-top: 40px; }
+
+  .nav-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: #22d3ee;
+    font-weight: 800;
     display: block;
-    margin-bottom: 12px;
+    margin-bottom: 22px;
   }
-  .nav-link-main.highlight { color: #22d3ee; margin-bottom: 20px; }
-  .nav-link-main.small { font-size: 17px; margin-bottom: 12px; font-weight: 500; opacity: 0.9; }
 
   .nav-sublinks {
     border-left: 1px solid rgba(34, 211, 238, 0.3);
-    padding-left: 15px;
-    margin-bottom: 25px;
+    padding-left: 20px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 12px;
   }
-  .nav-sublink { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 14px; transition: 0.2s; }
-  .nav-sublink:hover { color: #22d3ee; }
 
-  .contact-box {
-    background: rgba(255,255,255,0.03);
-    padding: 24px;
-    border-radius: 16px;
-    border: 1px solid rgba(255,255,255,0.08);
-  }
-  .contact-title { color: white; margin-bottom: 12px; font-size: 15px; font-weight: 600; }
-  .contact-quick { display: flex; flex-direction: column; gap: 5px; margin-bottom: 15px; font-size: 13px; }
+  .nav-sublink { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 16.5px; transition: 0.2s; }
+  .nav-sublink:hover { color: #22d3ee; }
+  .nav-sublink.highlight-sub { color: rgba(255,255,255,0.95); font-weight: 600; }
+
+  .contact-box { background: rgba(255,255,255,0.03); padding: 28px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.08); }
+  .contact-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; }
+  .contact-title { color: white; font-size: 16px; font-weight: 600; margin: 0; }
+  .linkedin-link { color: #22d3ee; opacity: 0.8; transition: 0.3s; }
+  .linkedin-link:hover { opacity: 1; transform: scale(1.1); }
+  
+  .contact-quick { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; font-size: 14px; }
   .contact-quick a { color: #22d3ee; text-decoration: none; }
 
-  .compact-form { display: flex; flex-direction: column; gap: 8px; }
-  .compact-form input, .compact-form textarea {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 10px;
-    color: white;
-    border-radius: 8px;
-    font-size: 13px;
-    outline: none;
-  }
-  .compact-form button {
-    background: #22d3ee;
-    color: #0f172a;
-    padding: 10px;
-    border-radius: 8px;
-    font-weight: 700;
-    border: none;
-    cursor: pointer;
-    transition: 0.2s;
-  }
+  .compact-form { display: flex; flex-direction: column; gap: 10px; }
+  .compact-form input, .compact-form textarea { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px; color: white; border-radius: 10px; font-size: 14px; outline: none; }
+  .compact-form button { background: #22d3ee; color: #0f172a; padding: 12px; border-radius: 10px; font-weight: 700; border: none; cursor: pointer; transition: 0.3s; }
   .compact-form button:hover { background: white; }
 
-  .success-msg { color: #22d3ee; font-weight: bold; text-align: center; margin-top: 10px; font-size: 14px; }
-  .drawer-copyright { color: rgba(255,255,255,0.2); font-size: 11px; margin-top: 40px; text-align: center; }
-  .drawer-close { position: absolute; top: 30px; right: 24px; font-size: 32px; color: white; background: none; border: none; cursor: pointer; }
+  .success-msg { color: #22d3ee; font-weight: bold; text-align: center; margin-top: 15px; }
+  .drawer-copyright { color: rgba(255,255,255,0.15); font-size: 11px; margin-top: 60px; text-align: center; }
+  .drawer-close { position: absolute; top: 35px; right: 30px; font-size: 36px; color: white; background: none; border: none; cursor: pointer; }
 
-  @media (max-width: 800px) {
-    .drawer-grid { grid-template-columns: 1fr; gap: 25px; overflow-y: auto; }
-    .nav-sublinks { margin-bottom: 10px; }
-    .drawer-container { padding-top: 80px; justify-content: flex-start; }
+  @media (max-width: 850px) {
+    .drawer-grid { grid-template-columns: 1fr; gap: 40px; overflow-y: auto; }
+    .drawer-container { padding-top: 100px; justify-content: flex-start; }
+    .nav-group-spacing { margin-top: 30px; }
   }
 </style>
 
@@ -170,8 +145,6 @@
   const drawer = document.getElementById("drawer");
   const overlay = document.getElementById("drawerOverlay");
   const closeBtn = document.getElementById("drawerClose");
-  
-  // שימוש ב-IDs הייחודיים שהגדרנו למעלה
   const exclusiveForm = document.getElementById("drawer-exclusive-form") as HTMLFormElement;
   const exclusiveBtn = document.getElementById("drawer-exclusive-send") as HTMLButtonElement;
   const exclusiveSuccess = document.getElementById("drawer-exclusive-success");
@@ -190,14 +163,9 @@
     window.dispatchEvent(new CustomEvent("menuStateChanged", { detail: { isOpen: false } }));
   }
 
-  // לוגיקת משלוח מבודדת למגירה בלבד
   exclusiveForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
-    if (exclusiveBtn) {
-      exclusiveBtn.disabled = true;
-      exclusiveBtn.textContent = "Sending...";
-    }
-
+    if (exclusiveBtn) { exclusiveBtn.disabled = true; exclusiveBtn.textContent = "Sending..."; }
     try {
       const formData = new FormData(exclusiveForm);
       const response = await fetch("https://api.web3forms.com/submit", {
@@ -205,19 +173,8 @@
         headers: { "Content-Type": "application/json", "Accept": "application/json" },
         body: JSON.stringify(Object.fromEntries(formData)),
       });
-
-      if (response.ok) {
-        exclusiveForm.classList.add("hidden");
-        exclusiveSuccess?.classList.remove("hidden");
-      } else {
-        throw new Error("Form submission failed");
-      }
-    } catch (err) {
-      if (exclusiveBtn) {
-        exclusiveBtn.disabled = false;
-        exclusiveBtn.textContent = "Error - Try Again";
-      }
-    }
+      if (response.ok) { exclusiveForm.classList.add("hidden"); exclusiveSuccess?.classList.remove("hidden"); }
+    } catch (err) { if (exclusiveBtn) { exclusiveBtn.disabled = false; exclusiveBtn.textContent = "Error"; } }
   });
 
   window.addEventListener("toggleMenu", () => drawer?.classList.contains("open") ? closeDrawer() : openDrawer());
