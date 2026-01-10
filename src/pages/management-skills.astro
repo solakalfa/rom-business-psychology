@@ -1,113 +1,169 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import TeamsCTA from "../components/cta/TeamsCTA.astro";
 import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Developing Management Skills - ROM Business Psychology">
 
-<!-- BREADCRUMB -->
-<section class="bg-gray-50 py-4">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <nav class="flex items-center text-sm text-gray-600">
-      <a href="/" class="hover:text-cyan-600">Home</a>
-      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-      </svg>
-      <a href="/teams-counseling" class="hover:text-cyan-600">Teams</a>
-      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-      </svg>
-      <span class="text-gray-900">Management Skills</span>
-    </nav>
-  </div>
-</section>
-
-<!-- HERO -->
-<section class="bg-white py-16">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <p class="text-cyan-600 font-semibold text-sm uppercase tracking-wider mb-4">
+<!-- HERO WITH IMAGE -->
+<section class="relative h-[50vh] min-h-[400px] flex items-center overflow-hidden">
+  <img
+    src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1920&q=80"
+    alt="Leadership development"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+  <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 via-blue-900/70 to-transparent"></div>
+  
+  <div class="relative z-10 container mx-auto px-6 max-w-[896px]">
+    <p class="text-cyan-400 font-semibold text-sm uppercase tracking-wider mb-4">
       Teams
     </p>
-    <h1 class="text-gray-900 mb-6">
-      Developing Management Skills
+    <h1 class="text-white text-4xl md:text-5xl font-bold mb-6 leading-tight">
+      Developing<br/>Management Skills
     </h1>
-    <p class="text-xl text-gray-600 leading-relaxed">
-      The challenge of leading people is more complex than ever. Traditional command-and-control managerial approaches do not work anymore, clearing the stage for much more human-focused and result-driven orientations.
-    </p>
-    <p class="text-xl text-gray-600 leading-relaxed mt-4">
-      We have translated these leadership orientations into habits that can be acquired. During our workshops, leaders learn simple and concrete behavioral skills. They find new and intriguing ways for empowering their team members and enabling them to expect more from themselves.
+    <p class="text-xl text-gray-300 leading-relaxed max-w-2xl">
+      The challenge of leading people is more complex than ever. Traditional command-and-control approaches don't work anymore—we've translated modern leadership into habits that can be acquired.
     </p>
   </div>
 </section>
 
-<!-- CONTENT -->
-<section class="bg-gray-50 py-16">
-  <div class="container mx-auto px-6 max-w-4xl">
+<!-- QUOTE BANNER -->
+<section class="bg-slate-900 py-10">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <blockquote class="text-center">
+      <p class="text-xl md:text-2xl text-white font-light italic">
+        "People want to be led by honest and worthy individuals. They will not be motivated unless they understand why."
+      </p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- BECOMING A LEADER -->
+<section class="bg-white py-20">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <div class="grid md:grid-cols-5 gap-12">
+      <div class="md:col-span-3">
+        <p class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-3">The Journey</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Becoming a Leader</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          We usually promote first-line managers from within the professional teams. The common practice states that in order to become a sales manager you should first be a salesman; before becoming R&D manager, you should work as an engineer.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Initial managerial legitimacy of young team leaders derives mainly from their professional expertise.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          Yet, the promotion to a managerial position sets in motion a series of challenges. New leaders are obliged to rise to the occasion, sharpening their interpersonal and managerial skills.
+        </p>
+      </div>
+      <div class="md:col-span-2">
+        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 h-full">
+          <h4 class="font-bold text-gray-900 mb-6">The Challenge</h4>
+          <ul class="space-y-4">
+            <li class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+              <span class="text-gray-700">Rise to the occasion</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+              <span class="text-gray-700">Sharpen interpersonal skills</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+              <span class="text-gray-700">Step outside comfort zone</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-2 h-2 bg-blue-600 rounded-full"></div>
+              <span class="text-gray-700">Develop managerial identity</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR OFFERING -->
+<section class="bg-slate-50 py-20">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <div class="text-center mb-12">
+      <p class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-3">Our Solution</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Management Skills in a Nutshell</h2>
+    </div>
     
-    <div class="prose prose-lg max-w-none">
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Needs Assessment</h3>
+        <p class="text-gray-600">
+          Before kicking-off, we conduct a short needs assessment. We map gaps in knowledge, skills, and abilities, and assemble a tailormade training program.
+        </p>
+      </div>
       
-      <h2 class="text-gray-900 mb-4">Becoming a Leader</h2>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        People want to be led by honest and worthy individuals. They will not be motivated unless they understand why. This is probably one of the reasons why we usually promote first-line managers from within; from the professional teams. The common practice states that in order to become a sales manager you should first be a salesman; before becoming R&D manager, you should work as an engineer. Whether we like this practice or not, initial managerial legitimacy of young team leaders, derives mainly from their professional expertise.
-      </p>
-      <p class="text-gray-700 leading-relaxed mb-8">
-        Yet, the promotion to a managerial position sets in motion a series of challenges for new leaders. They are obliged to rise to the occasion, sharpening their interpersonal and managerial skills, and step outside their comfort zone.
-      </p>
+      <div class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="w-14 h-14 bg-cyan-100 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-7 h-7 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Experiential Workshops</h3>
+        <p class="text-gray-600">
+          A series of workshops providing simple and concrete management practices, developing a "managerial language", and enhancing overall capacity.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <h2 class="text-gray-900 mb-4">Our Offering</h2>
-      <p class="text-gray-700 leading-relaxed mb-8">
-        Though people are often promoted to managerial positions as a result of their professional expertise and positive attitude, many lack relevant knowledge or management experience. They initially perform their managerial tasks without formal training and are forced to learn management intuitively and on the go. This is where we come in.
+<!-- THREE CIRCLES -->
+<section class="bg-gradient-to-br from-blue-600 to-blue-800 py-20">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <div class="text-center text-white mb-12">
+      <h2 class="text-3xl font-bold mb-4">Three Management Circles</h2>
+      <p class="text-blue-200 max-w-2xl mx-auto">
+        Our sessions cover three main management areas, providing practical tools for each level.
       </p>
-
-      <h2 class="text-gray-900 mb-4">Developing Management Skills in a Nutshell</h2>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        The objective of our management skills programs is to train managers by providing them with a comfortable platform for thinking out loud, sharing, learning, and assimilating simple managerial tools. During the program, participants create and sharpen their managerial identity while incorporating effective habits and routines.
-      </p>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        Before kicking-off the program, we conduct a short needs assessment. During this analysis, we map gaps in knowledge, skills, and abilities, and assemble a tailormade training program.
-      </p>
-      <p class="text-gray-700 leading-relaxed mb-8">
-        This program is shared with relevant stakeholders and receives management's approval and engagement beforehand.
-      </p>
-      <p class="text-gray-700 leading-relaxed mb-8">
-        Next, we conduct a series of experiential workshops that provide simple and concrete management practices, develop a "managerial language", increase self-awareness and enhance overall managerial capacity.
-      </p>
-
-      <h2 class="text-gray-900 mb-4">The Workshop</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
-        The program's sessions are characterized by practical and clear concretization of simple human principles. During the workshop, we analyze challenging situations and present different ways for coping with daily issues of influence, interpersonal communication, managerial routines, functional space and organizational context.
-      </p>
-      
-      <div class="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
-        <h3 class="text-gray-900 mb-4">The sessions cover three main management circles:</h3>
-        <ul class="space-y-3 text-gray-700">
-          <li class="flex items-start">
-            <svg class="w-5 h-5 text-blue-600 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span><strong>Self-management</strong> - gaining focus, managing priorities, planning, promoting infrastructure</span>
-          </li>
-          <li class="flex items-start">
-            <svg class="w-5 h-5 text-blue-600 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span><strong>Team management</strong> - setting expectations, providing feedback, team building</span>
-          </li>
-          <li class="flex items-start">
-            <svg class="w-5 h-5 text-blue-600 mt-1 mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span><strong>Management without authority</strong> - impact on interfaces, increase collaboration</span>
-          </li>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-8 text-center">
+        <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">1</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Self-Management</h3>
+        <ul class="text-gray-600 text-sm space-y-2">
+          <li>Gaining focus</li>
+          <li>Managing priorities</li>
+          <li>Planning</li>
+          <li>Promoting infrastructure</li>
         </ul>
       </div>
-
+      
+      <div class="bg-white rounded-2xl p-8 text-center">
+        <div class="w-20 h-20 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">2</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Team Management</h3>
+        <ul class="text-gray-600 text-sm space-y-2">
+          <li>Setting expectations</li>
+          <li>Providing feedback</li>
+          <li>Team building</li>
+          <li>Conflict resolution</li>
+        </ul>
+      </div>
+      
+      <div class="bg-white rounded-2xl p-8 text-center">
+        <div class="w-20 h-20 bg-gradient-to-br from-teal-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">3</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Without Authority</h3>
+        <ul class="text-gray-600 text-sm space-y-2">
+          <li>Impact on interfaces</li>
+          <li>Increase collaboration</li>
+          <li>Influence stakeholders</li>
+          <li>Cross-functional leadership</li>
+        </ul>
+      </div>
     </div>
-
   </div>
 </section>
 
 <Footer />
-
 </Layout>

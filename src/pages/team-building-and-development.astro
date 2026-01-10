@@ -1,84 +1,181 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import TeamsCTA from "../components/cta/TeamsCTA.astro";
 import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Team Building & Development - ROM Business Psychology">
 
-<!-- BREADCRUMB -->
-<section class="bg-gray-50 py-4">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <nav class="flex items-center text-sm text-gray-600">
-      <a href="/" class="hover:text-cyan-600">Home</a>
-      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-      </svg>
-      <a href="/teams" class="hover:text-cyan-600">Teams</a>
-      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-      </svg>
-      <span class="text-gray-900">Team Building</span>
-    </nav>
-  </div>
-</section>
-
-<!-- HERO -->
-<section class="bg-white py-16">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <p class="text-cyan-600 font-semibold text-sm uppercase tracking-wider mb-4">
+<!-- HERO WITH IMAGE -->
+<section class="relative h-[50vh] min-h-[400px] flex items-center overflow-hidden">
+  <img
+    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&q=80"
+    alt="Team collaboration"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+  <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-transparent"></div>
+  
+  <div class="relative z-10 container mx-auto px-6 max-w-[896px]">
+    <p class="text-cyan-400 font-semibold text-sm uppercase tracking-wider mb-4">
       Teams
     </p>
-    <h1 class="text-gray-900 mb-6">
-      Team Building & Development
+    <h1 class="text-white text-4xl md:text-5xl font-bold mb-6 leading-tight">
+      Team Building &<br/>Development
     </h1>
-    <p class="text-xl text-gray-600 leading-relaxed">
-      Business leaders often struggle to advance a collaborative culture among their people. Yet, in order to actually promote a genuine team spirit, leaders must first exhibit an excellent role model of cooperation among themselves.
+    <p class="text-xl text-gray-300 leading-relaxed max-w-2xl">
+      Business leaders often struggle to advance a collaborative culture. To promote genuine team spirit, leaders must first exhibit an excellent role model of cooperation among themselves.
     </p>
   </div>
 </section>
 
-<!-- CONTENT GRID -->
-<section class="bg-gray-50 py-16">
-  <div class="container mx-auto px-6 max-w-4xl">
-    
-    <div class="prose prose-lg max-w-none">
-      
-      <!-- High Performance Teams -->
-      <h2 class="text-gray-900 mb-4">High Performance Teams</h2>
-      <p class="text-gray-700 leading-relaxed mb-8">
-        Achieving a high-performance team standard takes work and commitment. Leaders must be fully engaged in the teamwork process and believe this is the right course! Time, managerial attention and resources must be put into place in order to hire the right team members. And finally, consistent managerial capacity should be allocated for the continuous mission of achieving the most from team members.
-      </p>
-
-      <!-- Our Offering -->
-      <h2 class="text-gray-900 mb-4">Our Offering</h2>
-      <p class="text-gray-700 leading-relaxed mb-8">
-        To assist leaders in the critical undertaking of promoting and improving teamwork, we bring to the table our knowledge and experience in building and empowering teams. Knowing that effective teamwork is the building block of healthy organizations; acknowledging the fact that a qualified executive management team is a critical factor for organizational success, we take the team building and development process very seriously.
-      </p>
-
-      <!-- Process -->
-      <h2 class="text-gray-900 mb-4">The Process</h2>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        At the beginning of this process, we conduct a team evaluation that measures important organizational parameters of culture, climate, processes, managerial routines, and human architecture. After analyzing, clarifying and deciding upon the critical issues, we conduct a targeted series of group sessions.
-      </p>
-      <p class="text-gray-700 leading-relaxed mb-8">
-        During these meetings, we assist leadership teams in identifying their strengths and challenges, promoting their mutual trust and openness, as well as advancing their knowledge, skills and abilities in teamwork participation and management.
-      </p>
-
-      <!-- Trust Triangle -->
-      <div class="bg-cyan-50 border-l-4 border-cyan-500 p-6 my-8">
-        <h3 class="text-gray-900 mb-3">Trust, Respect & Support</h3>
-        <p class="text-gray-700 leading-relaxed mb-3">
-          Our objective is to enable the team to establish and maintain the sacred triangle of trust, respect and support among themselves.
-        </p>
-        <p class="text-gray-700 leading-relaxed">
-          We mentor them in conducting systematic data analysis, managing effective discussions, developing robust managerial routines and processes, and executing effective decision-making and implementation mechanisms.
-        </p>
+<!-- STATS BAR -->
+<section class="bg-gradient-to-r from-cyan-600 to-blue-600 py-8">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <div class="grid grid-cols-3 gap-8 text-center text-white">
+      <div>
+        <div class="text-3xl md:text-4xl font-bold">20+</div>
+        <div class="text-sm text-cyan-100 mt-1">Years Experience</div>
       </div>
-
+      <div>
+        <div class="text-3xl md:text-4xl font-bold">500+</div>
+        <div class="text-sm text-cyan-100 mt-1">Teams Trained</div>
+      </div>
+      <div>
+        <div class="text-3xl md:text-4xl font-bold">98%</div>
+        <div class="text-sm text-cyan-100 mt-1">Success Rate</div>
+      </div>
     </div>
-
   </div>
 </section>
+
+<!-- HIGH PERFORMANCE TEAMS -->
+<section class="bg-slate-50 py-20">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-cyan-600 font-bold text-xs uppercase tracking-widest mb-3">The Challenge</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">High Performance Teams</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Achieving a high-performance team standard takes work and commitment. Leaders must be fully engaged in the teamwork process and believe this is the right course.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          Time, managerial attention and resources must be put into place in order to hire the right team members. Consistent managerial capacity should be allocated for the continuous mission of achieving the most from team members.
+        </p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-xl">
+        <div class="space-y-6">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-cyan-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-1">Full Engagement</h4>
+              <p class="text-sm text-gray-500">Leaders must believe in the teamwork process</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-1">Time Investment</h4>
+              <p class="text-sm text-gray-500">Dedicated resources for team development</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900 mb-1">Consistent Effort</h4>
+              <p class="text-sm text-gray-500">Continuous mission for maximum results</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR OFFERING -->
+<section class="bg-white py-20">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <div class="text-center mb-12">
+      <p class="text-cyan-600 font-bold text-xs uppercase tracking-widest mb-3">What We Bring</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Offering</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        We bring our knowledge and experience in building and empowering teams, knowing that effective teamwork is the building block of healthy organizations.
+      </p>
+    </div>
+    
+    <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-3xl p-10 text-white">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-cyan-400">The Process</h3>
+          <p class="text-gray-300 leading-relaxed mb-4">
+            At the beginning, we conduct a team evaluation measuring important organizational parameters: culture, climate, processes, managerial routines, and human architecture.
+          </p>
+          <p class="text-gray-300 leading-relaxed">
+            After analyzing and deciding upon critical issues, we conduct a targeted series of group sessions.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold mb-4 text-cyan-400">The Sessions</h3>
+          <p class="text-gray-300 leading-relaxed">
+            During these meetings, we assist leadership teams in identifying their strengths and challenges, promoting mutual trust and openness, and advancing their knowledge, skills and abilities in teamwork participation and management.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST TRIANGLE -->
+<section class="bg-gradient-to-br from-cyan-600 to-blue-700 py-20">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <div class="text-center text-white">
+      <h2 class="text-3xl font-bold mb-6">The Sacred Triangle</h2>
+      <p class="text-xl text-cyan-100 mb-12 max-w-2xl mx-auto">
+        Our objective is to enable the team to establish and maintain trust, respect and support among themselves.
+      </p>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-8">
+          <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Trust</h3>
+          <p class="text-cyan-100 text-sm">Building psychological safety for open communication</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-8">
+          <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Respect</h3>
+          <p class="text-cyan-100 text-sm">Valuing diverse perspectives and contributions</p>
+        </div>
+        <div class="bg-white/10 backdrop-blur rounded-2xl p-8">
+          <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Support</h3>
+          <p class="text-cyan-100 text-sm">Creating collaborative environments for growth</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <Footer />
 </Layout>

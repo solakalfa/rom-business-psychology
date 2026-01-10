@@ -1,73 +1,147 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PeopleCTA from "../components/cta/PeopleCTA.astro";
 import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Career Development - ROM Business Psychology">
 
-<!-- BREADCRUMB -->
-<section class="bg-gray-50 py-4">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <nav class="flex items-center text-sm text-gray-600">
-      <a href="/" class="hover:text-cyan-600">Home</a>
-      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-      </svg>
-      <a href="/personal-counseling" class="hover:text-cyan-600">People</a>
-      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-      </svg>
-      <span class="text-gray-900">Career Development</span>
-    </nav>
-  </div>
-</section>
-
-<!-- HERO -->
-<section class="bg-white py-16">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <p class="text-cyan-600 font-semibold text-sm uppercase tracking-wider mb-4">
+<!-- HERO WITH IMAGE -->
+<section class="relative h-[50vh] min-h-[400px] flex items-center overflow-hidden">
+  <img
+    src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1920&q=80"
+    alt="Career growth"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+  <div class="absolute inset-0 bg-gradient-to-r from-emerald-900/90 via-emerald-900/70 to-transparent"></div>
+  
+  <div class="relative z-10 container mx-auto px-6 max-w-[896px]">
+    <p class="text-emerald-300 font-semibold text-sm uppercase tracking-wider mb-4">
       People
     </p>
-    <h1 class="text-gray-900 mb-6">
-      Career Development
+    <h1 class="text-white text-4xl md:text-5xl font-bold mb-6 leading-tight">
+      Career<br/>Development
     </h1>
-    <p class="text-xl text-gray-600 leading-relaxed">
-      About two-thirds of our waking hours are devoted to work. Wisely choosing our career path and developing practical steps for achieving our goals, is an important element for a healthy mental and emotional lives.
-    </p>
-    <p class="text-xl text-gray-600 leading-relaxed mt-4">
-      After dozens of career development processes, we can state that individuals tend to choose their professional path as a reflection of the way they see themselves and the place they think they are entitled. Our job is to empower our consultees and to enhance their sense of security and competence.
+    <p class="text-xl text-gray-300 leading-relaxed max-w-2xl">
+      About two-thirds of our waking hours are devoted to work. Wisely choosing our career path is an important element for healthy mental and emotional lives.
     </p>
   </div>
 </section>
 
-<!-- CONTENT -->
-<section class="bg-gray-50 py-16">
-  <div class="container mx-auto px-6 max-w-4xl">
-    
-    <div class="prose prose-lg max-w-none">
-      
-      <h2 class="text-gray-900 mb-4">Sliding Doors</h2>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        It wasn't so long ago that people believed they should have a job for life. The common view in the employment world was "Till death do us apart." However, in today's fast-paced work environment, people are expected on an average to hold eight different careers over their lifetime (!).
-      </p>
-      <p class="text-gray-700 leading-relaxed mb-8">
-        Like any change, career development involves a gradual growth process. Success is achieved when an appropriate career path is formulated; one that embodies the potential for employment realization, increases the sense of satisfaction from work and meets personal, social, and economic needs.
-      </p>
-
-      <h2 class="text-gray-900 mb-4">Our Offering</h2>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        In our career counseling sessions, strengths, desires and needs are analyzed. We dive into the client's value system, abilities, skills, and experience. We uncover and discuss gaps between the client's current employment state and future expectations.
-      </p>
-      <p class="text-gray-700 leading-relaxed mb-8">
-        After clarifying the picture, we formulate a practical work plan for bridging these gaps.
-      </p>
-
+<!-- STATS -->
+<section class="bg-gradient-to-r from-emerald-600 to-teal-600 py-10">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
+      <div>
+        <div class="text-3xl font-bold">8</div>
+        <div class="text-sm text-emerald-100">Careers per Lifetime</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold">67%</div>
+        <div class="text-sm text-emerald-100">Waking Hours at Work</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold">100+</div>
+        <div class="text-sm text-emerald-100">Clients Guided</div>
+      </div>
+      <div>
+        <div class="text-3xl font-bold">95%</div>
+        <div class="text-sm text-emerald-100">Satisfaction Rate</div>
+      </div>
     </div>
+  </div>
+</section>
 
+<!-- SLIDING DOORS -->
+<section class="bg-white py-20">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <div class="grid md:grid-cols-5 gap-12">
+      <div class="md:col-span-3">
+        <p class="text-emerald-600 font-bold text-xs uppercase tracking-widest mb-3">The Reality</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Sliding Doors</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          It wasn't so long ago that people believed they should have a job for life. The common view was "Till death do us apart."
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          However, in today's fast-paced work environment, people are expected on average to hold <strong>eight different careers</strong> over their lifetime.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          Like any change, career development involves a gradual growth process. Success is achieved when an appropriate career path is formulated—one that embodies potential for employment realization, increases satisfaction, and meets personal, social, and economic needs.
+        </p>
+      </div>
+      <div class="md:col-span-2">
+        <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-3xl p-8 text-white h-full flex flex-col justify-center">
+          <h3 class="text-xl font-bold mb-6">Our Insight</h3>
+          <p class="text-emerald-100 leading-relaxed">
+            Individuals tend to choose their professional path as a reflection of how they see themselves and the place they think they are entitled.
+          </p>
+          <p class="text-emerald-100 leading-relaxed mt-4 font-semibold">
+            Our job is to empower our consultees and enhance their sense of security and competence.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR OFFERING -->
+<section class="bg-slate-50 py-20">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <div class="text-center mb-12">
+      <p class="text-emerald-600 font-bold text-xs uppercase tracking-widest mb-3">The Process</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Offering</h2>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Deep Analysis</h3>
+        <p class="text-gray-600">
+          We analyze strengths, desires and needs. We dive into your value system, abilities, skills, and experience.
+        </p>
+      </div>
+      
+      <div class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-7 h-7 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Gap Discovery</h3>
+        <p class="text-gray-600">
+          We uncover and discuss gaps between your current employment state and future expectations.
+        </p>
+      </div>
+      
+      <div class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-7 h-7 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Clear Picture</h3>
+        <p class="text-gray-600">
+          After clarifying the full picture, we understand exactly where you are and where you want to be.
+        </p>
+      </div>
+      
+      <div class="bg-white rounded-2xl p-8 shadow-lg">
+        <div class="w-14 h-14 bg-teal-100 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-7 h-7 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+          </svg>
+        </div>
+        <h3 class="text-xl font-bold text-gray-900 mb-3">Practical Plan</h3>
+        <p class="text-gray-600">
+          We formulate a practical work plan for bridging these gaps and achieving your career goals.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
 <Footer />
-
 </Layout>

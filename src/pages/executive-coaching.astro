@@ -1,70 +1,132 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import PeopleCTA from "../components/cta/PeopleCTA.astro";
 import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Executive Coaching - ROM Business Psychology">
 
-<!-- BREADCRUMB -->
-<section class="bg-gray-50 py-4">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <nav class="flex items-center text-sm text-gray-600">
-      <a href="/" class="hover:text-cyan-600">Home</a>
-      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-      </svg>
-      <a href="/personal-counseling" class="hover:text-cyan-600">People</a>
-      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-      </svg>
-      <span class="text-gray-900">Executive Coaching</span>
-    </nav>
-  </div>
-</section>
-
-<!-- HERO -->
-<section class="bg-white py-16">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <p class="text-cyan-600 font-semibold text-sm uppercase tracking-wider mb-4">
+<!-- HERO WITH IMAGE -->
+<section class="relative h-[50vh] min-h-[400px] flex items-center overflow-hidden">
+  <img
+    src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1920&q=80"
+    alt="Executive coaching session"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+  <div class="absolute inset-0 bg-gradient-to-r from-indigo-900/90 via-indigo-900/70 to-transparent"></div>
+  
+  <div class="relative z-10 container mx-auto px-6 max-w-[896px]">
+    <p class="text-indigo-300 font-semibold text-sm uppercase tracking-wider mb-4">
       People
     </p>
-    <h1 class="text-gray-900 mb-6">
-      Executive Coaching
+    <h1 class="text-white text-4xl md:text-5xl font-bold mb-6 leading-tight">
+      Executive<br/>Coaching
     </h1>
-    <p class="text-xl text-gray-600 leading-relaxed">
-      Managers rarely have 'just another day at the office.' Every day comes with a new set of surprises, crises, questions and conflicts that do not have easy answers or immediate resolution.
-    </p>
-    <p class="text-xl text-gray-600 leading-relaxed mt-4">
-      Managers are required to be fully alert and decisive at all times. Even the most seasoned managers seek a partner with whom they can conduct a clarified dialogue.
+    <p class="text-xl text-gray-300 leading-relaxed max-w-2xl">
+      Managers rarely have 'just another day at the office.' Every day comes with surprises, crises, and questions that don't have easy answers.
     </p>
   </div>
 </section>
 
-<!-- CONTENT -->
-<section class="bg-gray-50 py-16">
-  <div class="container mx-auto px-6 max-w-4xl">
-    
-    <div class="prose prose-lg max-w-none">
-      
-      <h2 class="text-gray-900 mb-4">Bringing Partnership to the Table</h2>
-      <p class="text-gray-700 leading-relaxed mb-8">
-        The purpose of executive coaching is to provide managers with insights regarding their inner and outer surroundings through a series of one-on-one sessions.
+<!-- QUOTE BANNER -->
+<section class="bg-gradient-to-r from-indigo-600 to-purple-600 py-10">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <blockquote class="text-center">
+      <p class="text-xl md:text-2xl text-white font-light italic">
+        "Even the most seasoned managers seek a partner with whom they can conduct a clarified dialogue."
       </p>
+    </blockquote>
+  </div>
+</section>
 
-      <h2 class="text-gray-900 mb-4">Our Offering</h2>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        During these meetings, leaders get the opportunity to discuss their concerns, analyze and develop new approaches, formulate behavioral practices and assimilate managerial routines.
-      </p>
-      <p class="text-gray-700 leading-relaxed mb-8">
-        These new habits will provide leaders with tools for analyzing, processing and taking the necessary initiatives. Aside from constructing concrete steps for addressing current managerial issues, the counseling sessions assist in developing infrastructure for mitigating future challenges.
-      </p>
-
+<!-- PARTNERSHIP -->
+<section class="bg-white py-20">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-indigo-600 font-bold text-xs uppercase tracking-widest mb-3">Our Approach</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Bringing Partnership to the Table</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          The purpose of executive coaching is to provide managers with insights regarding their inner and outer surroundings through a series of one-on-one sessions.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          Leaders get the opportunity to discuss their concerns, analyze and develop new approaches, formulate behavioral practices and assimilate managerial routines.
+        </p>
+      </div>
+      <div class="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl p-10">
+        <h3 class="text-xl font-bold text-gray-900 mb-6">What You Gain</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">New Insights</h4>
+              <p class="text-sm text-gray-500">Fresh perspectives on challenges</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Concrete Steps</h4>
+              <p class="text-sm text-gray-500">Actionable plans for current issues</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+              </svg>
+            </div>
+            <div>
+              <h4 class="font-semibold text-gray-900">Future Infrastructure</h4>
+              <p class="text-sm text-gray-500">Tools for upcoming challenges</p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
+</section>
 
+<!-- PROCESS -->
+<section class="bg-slate-900 py-20">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <div class="text-center mb-12">
+      <p class="text-indigo-400 font-bold text-xs uppercase tracking-widest mb-3">The Journey</p>
+      <h2 class="text-3xl font-bold text-white mb-4">How It Works</h2>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="text-center">
+        <div class="w-16 h-16 bg-indigo-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <span class="text-3xl font-bold text-indigo-400">1</span>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Discuss</h3>
+        <p class="text-gray-400 text-sm">Share concerns and challenges in a safe space</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <span class="text-3xl font-bold text-purple-400">2</span>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Analyze</h3>
+        <p class="text-gray-400 text-sm">Develop new approaches and perspectives</p>
+      </div>
+      <div class="text-center">
+        <div class="w-16 h-16 bg-indigo-500/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+          <span class="text-3xl font-bold text-indigo-400">3</span>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Implement</h3>
+        <p class="text-gray-400 text-sm">Formulate and assimilate new habits</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <Footer />
-
 </Layout>

@@ -106,25 +106,9 @@ Edna is experienced with global organizations and teams, and currently works mai
 She facilitates workshops and executive coaching programs in both English and Hebrew.
 
 Edna holds a Master's Degree in Counseling and Organizational Development (summa cum laude) and a Bachelor's Degree in Behavioral Science, specializing in Organizational Behavior (graduated with honors).`
-  },
-
-  naama: {
-    id: "naama",
-    name: "Naama Zalzman (M.A.)",
-    role: "Organizational Consultant",
-    image: "/team/Naama.jpg",
-    email: "",
-    bio: `Naama is an organizational consultant with experience in leadership training and organizational development.
-
-Based out of New York, Naama is a coach, workshop facilitator, and organizational consultant. She specializes in identifying and resolving key organizational challenges and supports high-growth tech companies, teams, and leaders, in their US expansion effort.
-
-Naama specializes in leadership training and executive coaching that addresses issues leaders face in the modern workplace – both remote and local, culturally diverse or homogeneous. Throughout her work, Naama uses practical tools and ideas to help teams and individuals navigate difficult situations and support growth.
-
-Prior to joining Rom Business Psychology, Naama held several managerial positions in global companies in Israel and the US such as Vertex Ventures and PwC, and worked with dozens of tech companies from seed stage to IPO, entrepreneurs, and multicultural teams.
-
-Naama is also a co-host at Od Podcast, a popular tech podcast (with over 1M downloads), specializing in startup growth best practices, culture, and management challenges, and was featured in Israel's Forbes 30 under 30 list (2019).`
   }
 };
+
 
 // ========================================
 // Functions - Switch to Sanity when ready

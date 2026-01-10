@@ -1,94 +1,177 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import TeamsCTA from "../components/cta/TeamsCTA.astro";
 import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Mentoring Task Force & Ad Hoc Teams - ROM Business Psychology">
 
-<!-- BREADCRUMB -->
-<section class="bg-gray-50 py-4">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <nav class="flex items-center text-sm text-gray-600">
-      <a href="/" class="hover:text-cyan-600">Home</a>
-      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-      </svg>
-      <a href="/teams-counseling" class="hover:text-cyan-600">Teams</a>
-      <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-      </svg>
-      <span class="text-gray-900">Task Force</span>
-    </nav>
-  </div>
-</section>
-
-<!-- HERO -->
-<section class="bg-white py-16">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <p class="text-cyan-600 font-semibold text-sm uppercase tracking-wider mb-4">
+<!-- HERO WITH IMAGE -->
+<section class="relative h-[50vh] min-h-[400px] flex items-center overflow-hidden">
+  <img
+    src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1920&q=80"
+    alt="Task force meeting"
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+  <div class="absolute inset-0 bg-gradient-to-r from-teal-900/90 via-teal-900/70 to-transparent"></div>
+  
+  <div class="relative z-10 container mx-auto px-6 max-w-[896px]">
+    <p class="text-teal-400 font-semibold text-sm uppercase tracking-wider mb-4">
       Teams
     </p>
-    <h1 class="text-gray-900 mb-6">
-      Mentoring Task Force & Ad Hoc Teams
+    <h1 class="text-white text-4xl md:text-5xl font-bold mb-6 leading-tight">
+      Mentoring Task Force<br/>& Ad Hoc Teams
     </h1>
-    <p class="text-xl text-gray-600 leading-relaxed">
-      Business runs fast. Contemporary complexity and work overloads, require companies to enlarge their capacity. This can often be achieved through improving work processes, simplifying things, planning and arranging correctly, removing bottlenecks and promoting open and clear communication.
-    </p>
-    <p class="text-xl text-gray-600 leading-relaxed mt-4">
-      Since large portions of the organizational activity is being done on a cross-sectional level, companies occasionally assemble task-forces and ad hoc teams for analyzing situations, suggesting alternative solutions, and promoting cross-organizational collaboration.
+    <p class="text-xl text-gray-300 leading-relaxed max-w-2xl">
+      Business runs fast. Contemporary complexity requires companies to enlarge their capacity through improving processes, simplifying things, and promoting open communication.
     </p>
   </div>
 </section>
 
-<!-- CONTENT -->
-<section class="bg-gray-50 py-16">
-  <div class="container mx-auto px-6 max-w-4xl">
-    
-    <div class="prose prose-lg max-w-none">
-      
-      <h2 class="text-gray-900 mb-4">Dealing with Complexity</h2>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        Modern organizations are multidisciplinary by nature and operate in highly interdependent environments. In order for them to make good calls, they should cultivate an interdisciplinary collaborative culture where people can be heard. Thus making sure that people with unique knowledge and diverse practical experience will have a sit around the table.
-      </p>
-      <p class="text-gray-700 leading-relaxed mb-8">
-        The fundamental practice of an effective decision making process is an open and tolerant dialogue among people holding diverse perspectives. As the saying goes, if two people think the same, one of them can be excused. Naturally, diversity is also a source for conflicts and misunderstandings, and might cause waste, negativity, and frustration.
-      </p>
-
-      <h2 class="text-gray-900 mb-4">Our Offering</h2>
-      <p class="text-gray-700 leading-relaxed mb-8">
-        Organizational changes, new opportunities, interpersonal differences, conflicts of interest, and sync efforts are serious issues. Leaders should rightfully allocate their time, energy, and resources in mitigating cross-sectional down-sides. But, they don't always have the right tools for that. This is where we step in.
-      </p>
-
-      <h2 class="text-gray-900 mb-4">Mentoring Task Force & Ad Hoc Teams in a Nutshell</h2>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        During the mentorship process we facilitate team processes in accordance to a pre-articulated target. Initially, we analyze the situation through interviews and systematic observations. Then, we clarify the team's mission.
-      </p>
-      <p class="text-gray-700 leading-relaxed mb-4">
-        Whether it is a cross-organizational task force that was asked to solve a bottleneck, or a departmental organic team that wishes to alleviate their staff meetings, or merely a couple of executives that just don't get along, we can offer customized solutions.
-      </p>
-      <p class="text-gray-700 leading-relaxed mb-8">
-        The mentoring sessions contain a series of secure and tight-guided meetings. In these sessions, we offer interpersonal platforms where relevant stakeholders can meet and promote effective dialogue in light of the challenges they face. These platforms enable the development of cross-organizational solutions and increase organizational capacity and engagement.
-      </p>
-
-      <div class="bg-teal-50 border-l-4 border-teal-500 p-6 my-8">
-        <h3 class="text-gray-900 mb-4">Facilitating Collaboration</h3>
-        <p class="text-gray-700 leading-relaxed mb-3">
-          In the initial phases of the activity we guide stakeholders through a self-diagnosis process, that enables them to map their challenges and areas of improvement. Subsequently, the team prioritizes the issues and is ready to dive in…
+<!-- COMPLEXITY SECTION -->
+<section class="bg-white py-20">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="order-2 md:order-1">
+        <div class="bg-gradient-to-br from-teal-500 to-teal-700 rounded-3xl p-10 text-white">
+          <h3 class="text-2xl font-bold mb-6">Why Diversity Matters</h3>
+          <p class="text-teal-100 mb-6">
+            The fundamental practice of effective decision making is an open and tolerant dialogue among people holding diverse perspectives.
+          </p>
+          <blockquote class="border-l-4 border-white/30 pl-4 italic text-teal-50">
+            "If two people think the same, one of them can be excused."
+          </blockquote>
+        </div>
+      </div>
+      <div class="order-1 md:order-2">
+        <p class="text-teal-600 font-bold text-xs uppercase tracking-widest mb-3">The Reality</p>
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Dealing with Complexity</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Modern organizations are multidisciplinary by nature and operate in highly interdependent environments. To make good calls, they should cultivate an interdisciplinary collaborative culture.
         </p>
-        <p class="text-gray-700 leading-relaxed mb-3">
-          The aim of the mentoring process is to increase team effectiveness to meet current as well as future challenges.
-        </p>
-        <p class="text-gray-700 leading-relaxed">
-          This is done by facilitating communication processes, making sure trust is in the air, implementing suitable work methodologies, and establishing a simple and concise plan alongside with sustainable action items.
+        <p class="text-gray-600 leading-relaxed">
+          Naturally, diversity is also a source for conflicts and misunderstandings, and might cause waste, negativity, and frustration.
         </p>
       </div>
-
     </div>
+  </div>
+</section>
 
+<!-- SITUATIONS WE HANDLE -->
+<section class="bg-slate-900 py-20">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <div class="text-center mb-12">
+      <p class="text-teal-400 font-bold text-xs uppercase tracking-widest mb-3">Our Expertise</p>
+      <h2 class="text-3xl font-bold text-white mb-4">Situations We Handle</h2>
+    </div>
+    
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:border-teal-500 transition-colors">
+        <div class="w-12 h-12 bg-teal-500/20 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Cross-Organizational Task Force</h3>
+        <p class="text-gray-400 text-sm">Teams assembled to solve bottlenecks and improve processes</p>
+      </div>
+      
+      <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:border-teal-500 transition-colors">
+        <div class="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Departmental Teams</h3>
+        <p class="text-gray-400 text-sm">Organic teams that wish to alleviate staff meetings and improve collaboration</p>
+      </div>
+      
+      <div class="bg-slate-800 rounded-2xl p-8 border border-slate-700 hover:border-teal-500 transition-colors">
+        <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-6">
+          <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+          </svg>
+        </div>
+        <h3 class="text-lg font-bold text-white mb-2">Conflict Resolution</h3>
+        <p class="text-gray-400 text-sm">Executives that just don't get along and need facilitation</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROCESS -->
+<section class="bg-gradient-to-br from-teal-50 to-cyan-50 py-20">
+  <div class="container mx-auto px-6 max-w-[896px]">
+    <div class="text-center mb-12">
+      <p class="text-teal-600 font-bold text-xs uppercase tracking-widest mb-3">How We Work</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">The Mentoring Process</h2>
+    </div>
+    
+    <div class="relative">
+      <!-- Timeline line -->
+      <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-teal-300"></div>
+      
+      <div class="space-y-12">
+        <!-- Step 1 -->
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="md:w-1/2 md:text-right">
+            <div class="bg-white rounded-2xl p-6 shadow-lg inline-block">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">1. Analysis</h3>
+              <p class="text-gray-600">Interviews and systematic observations to understand the situation</p>
+            </div>
+          </div>
+          <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">1</div>
+          <div class="md:w-1/2"></div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="md:w-1/2"></div>
+          <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">2</div>
+          <div class="md:w-1/2">
+            <div class="bg-white rounded-2xl p-6 shadow-lg inline-block">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">2. Self-Diagnosis</h3>
+              <p class="text-gray-600">Guide stakeholders to map challenges and areas of improvement</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="md:w-1/2 md:text-right">
+            <div class="bg-white rounded-2xl p-6 shadow-lg inline-block">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">3. Facilitation</h3>
+              <p class="text-gray-600">Secure, tight-guided meetings to promote effective dialogue</p>
+            </div>
+          </div>
+          <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">3</div>
+          <div class="md:w-1/2"></div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="flex flex-col md:flex-row items-center gap-8">
+          <div class="md:w-1/2"></div>
+          <div class="w-12 h-12 bg-teal-500 rounded-full flex items-center justify-center text-white font-bold z-10 flex-shrink-0">4</div>
+          <div class="md:w-1/2">
+            <div class="bg-white rounded-2xl p-6 shadow-lg inline-block">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">4. Implementation</h3>
+              <p class="text-gray-600">Sustainable action items and simple, concise plans</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOME -->
+<section class="bg-teal-600 py-16">
+  <div class="container mx-auto px-6 max-w-[896px] text-center text-white">
+    <h2 class="text-2xl md:text-3xl font-bold mb-4">The Aim</h2>
+    <p class="text-xl text-teal-100 max-w-2xl mx-auto">
+      Increase team effectiveness to meet current as well as future challenges—facilitating communication, ensuring trust, implementing suitable methodologies, and establishing sustainable action plans.
+    </p>
   </div>
 </section>
 
 <Footer />
-
 </Layout>

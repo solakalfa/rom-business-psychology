@@ -6,7 +6,7 @@
 // import { sanityClient } from '../lib/sanity';
 
 const CLIENTS_DATA = [
-  { id: "1_mzfd1yqczkmq7kqfe69_cg1-e1528181769476", name: "1 Mzfd1Yqczkmq7Kqfe69 Cg1 E1528181769476", logo: "/clients/1_mzfD1yQczkMq7KQfE69_cg1-e1528181769476.png" },
+  { id: "sirin", name: "Sirin", logo: "/clients/sirin.png" },
   { id: "4m-1", name: "4M 1", logo: "/clients/4m-1.png" },
   { id: "albert", name: "Albert", logo: "/clients/ALBERT.png" },
   { id: "broadcom", name: "Broadcom", logo: "/clients/BROADCOM.png" },
@@ -172,7 +172,19 @@ const CLIENTS_DATA = [
   { id: "woo-blog", name: "Woo Blog", logo: "/clients/woo-blog.jpg" },
   { id: "wsc", name: "Wsc", logo: "/clients/wsc.png" },
   { id: "zafran", name: "Zafran", logo: "/clients/zafran.jpeg" },
-  { id: "zencitiy", name: "Zencitiy", logo: "/clients/zencitiy.jpg" }
+  { id: "zencitiy", name: "Zencitiy", logo: "/clients/zencitiy.jpg" },
+  { id: "genlabs", name: "Gen Labs", logo: "/clients/genlabs.png" },
+  { id: "guardz", name: "Guardz", logo: "/clients/guardz.png" },
+  { id: "ivix", name: "Ivix", logo: "/clients/ivix.png" },
+  { id: "jazz", name: "Jazz Security", logo: "/clients/jazz.png" },
+  { id: "kpmg", name: "KPMG", logo: "/clients/kpmg.png" },
+  { id: "onyx", name: "Onyx Security", logo: "/clients/onyx.png" },
+  { id: "package", name: "Package.ai", logo: "/clients/pakege.svg" },
+  { id: "pillar", name: "Pillar Security", logo: "/clients/pillar.png" },
+  { id: "port", name: "Port", logo: "/clients/port.png" },
+  { id: "quack", name: "Quack", logo: "/clients/quack.png" },
+  { id: "seal", name: "Seal Security", logo: "/clients/seal.png" },
+  { id: "zenity", name: "Zenity", logo: "/clients/zenity.png" },
 ];
 
 /**
