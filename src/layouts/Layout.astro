@@ -2,24 +2,94 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Drawer from "../components/Drawer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const { 
+  title = "ROM Business Psychology | Leadership & Organizational Development",
+  description = "We translate the Human Operating System into simple leadership solutions. Executive coaching, team building, and organizational development for high-tech companies.",
+  image = "/og-image.svg"
+} = Astro.props;
+
+const siteUrl = "https://rompsyc.com";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 ---
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content="ROM Business Psychology" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalUrl} />
+    
+    <!-- Keywords -->
+    <meta name="keywords" content="business psychology, executive coaching, team building, leadership development, organizational consulting, high-tech, startup, Israel, Dr. Eldad Rom" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${image}`} />
+    <meta property="og:site_name" content="ROM Business Psychology" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={`${siteUrl}${image}`} />
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+    
+    <!-- Generator -->
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <title>ROM Business Psychology</title>
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ROM Business Psychology",
+        "url": "https://rompsyc.com",
+        "logo": "https://rompsyc.com/favicon.svg",
+        "description": "We translate the Human Operating System into simple leadership solutions.",
+        "founder": {
+          "@type": "Person",
+          "name": "Dr. Eldad Rom"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "IL"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/rom-business-psychology"
+        ]
+      }
+    </script>
 
     <style is:global>
-      /* מניעת גלילה רוחבית וייצוב האתר במובייל */
       html, body {
         max-width: 100%;
         overflow-x: hidden;
@@ -30,7 +100,6 @@ import Drawer from "../components/Drawer.astro";
         -moz-osx-font-smoothing: grayscale;
       }
 
-      /* תיקון מוודא שתוכן העמוד תמיד ברוחב הנכון */
       main {
         width: 100%;
         overflow-x: hidden;
@@ -38,7 +107,6 @@ import Drawer from "../components/Drawer.astro";
         padding-top: 90px;
       }
 
-      /* מניעת קפיצות של ה-Drawer במובייל */
       body.drawer-open {
         overflow: hidden;
       }
