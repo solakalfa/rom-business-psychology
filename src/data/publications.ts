@@ -38,6 +38,14 @@ export const publications: Publication[] = [
     image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80',
     publishedAt: '2024-11-18'
   },
+   {
+    id: 'pub-startup',
+    title: '324: לנצח את הלופ - הפסיכולוגיה של הפאונדר.ית',
+    excerpt: 'רוני הרניב מארחת את ד"ר אלדד רום, פסיכולוג ארגוני ושותף ב-Team8. למה קרן הון סיכון צריכה פסיכולוג? כי הנתונים מראים שבין 35% ל-65% מהסטארטאפים נכשלים בגלל בעיות בין המייסדים',
+    category: 'Podcasts',
+    link: 'https://open.spotify.com/episode/2ZmGsmLDNpEXAvggjA4Zya',
+    publishedAt: '2025-11-11'
+  },
   // === FROM THE PRESS ===
   {
     id: 'pub-2',

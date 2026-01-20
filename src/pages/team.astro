@@ -61,15 +61,7 @@ import Footer from "../components/Footer.astro";
           />
         </div>
 
-        <div class="h-full">
-          <TeamCard
-            name="David Segal (Ph.D.)"
-            role="Clinical Psychologist"
-            image="/team/dr-david-segal.jpg"
-            memberId="david"
-            customClass="object-top scale-95"
-          />
-        </div>
+        
 
         <div class="h-full">
           <TeamCard
@@ -107,12 +99,12 @@ import Footer from "../components/Footer.astro";
           />
         </div>
 
-        <div class="h-full">
+      <div class="h-full">
           <TeamCard
-            name="Edna Arbel (M.A.)"
-            role="Executive Coach"
-            image="/team/עדנה-ארבל.jpg"
-            memberId="edna"
+            name="David Segal (Ph.D.)"
+            role="Clinical Psychologist"
+            image="/team/dr-david-segal.jpg"
+            memberId="david"
             customClass="object-top scale-95"
           />
         </div>
@@ -158,42 +150,45 @@ import Footer from "../components/Footer.astro";
 
           if (!member) return;
 
-          container.innerHTML = `
-            <div class="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" id="popup-backdrop">
-              <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl">
+         container.innerHTML = `
+            <div class="fixed inset-0 bg-black/60 z-[600] flex items-center justify-center p-4" id="popup-backdrop">
+              <div class="bg-white rounded-2xl max-w-xl w-full max-h-[90vh] overflow-hidden shadow-2xl relative">
                 
-                <div class="sticky top-0 bg-gradient-to-r from-cyan-600 to-blue-600 text-white p-6 flex items-center justify-between">
-                  <div class="flex items-center gap-4">
-                    <img src="${member.image}" alt="${member.name}" class="w-16 h-16 rounded-full object-cover border-2 border-white" />
-                    <div>
-                      <h2 class="text-xl font-bold">${member.name}</h2>
-                      <p class="text-cyan-100">${member.role}</p>
+                <!-- Close button -->
+                <button id="close-popup" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors z-10">
+                  <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+                
+                <!-- Content -->
+                <div class="p-8 overflow-y-auto max-h-[90vh]">
+                  
+                  <!-- Image + Name side by side -->
+                  <div class="flex gap-6 mb-6">
+                    <img src="${member.image}" alt="${member.name}" class="w-32 h-40 rounded-xl object-cover object-top shadow-lg flex-shrink-0" />
+                    <div class="flex flex-col justify-center">
+                      <h2 class="text-xl font-bold text-gray-900 mb-1">${member.name}</h2>
+
+                      <p class="text-cyan-600 font-semibold uppercase tracking-wider text-sm">${member.role}</p>
                     </div>
                   </div>
-                  <button id="close-popup" class="text-white hover:rotate-90 transition-transform duration-300">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
-                </div>
-                
-                <div class="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
-                  <p class="text-gray-700 leading-relaxed whitespace-pre-line">${member.bio}</p>
                   
-                  ${
-                    member.email
-                      ? `
-                    <div class="mt-6 pt-6 border-t border-gray-200">
-                      <a href="mailto:${member.email}" class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-medium">
+                  <!-- Bio -->
+                  <div class="prose prose-gray max-w-none">
+                    <p class="text-gray-600 leading-relaxed text-base whitespace-pre-line">${member.bio}</p>
+                  </div>
+                  
+                  ${member.email ? `
+                    <div class="mt-6 pt-6 border-t border-gray-100">
+                      <a href="mailto:${member.email}" class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-medium transition-colors">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
                         ${member.email}
                       </a>
                     </div>
-                  `
-                      : ""
-                  }
+                  ` : ''}
                 </div>
               </div>
             </div>
