@@ -13,12 +13,12 @@ export interface Publication {
 export const publications: Publication[] = [
   // === PODCASTS ===
   {
-    id: 'pub-1',
-    title: '"העובדים זוכרים הכל": ד"ר אלדד רום מסביר למה למנהלים אסור להיראות סחוטים בזום',
-    excerpt: 'אלדד רום, המלווה ומייעץ לסטארט-אפים זה שני עשורים, מסביר מה זה "אומץ ניהולי" במשברים, וגם על הקורולציה בין פרודוקטיביות לבריאות',
+    id: 'pub-guy-katzovitz',
+    title: 'איך מתמודדים עם חרדה, לחץ ואי-ודאות? המדריך לחוסן מנטלי ליזם המתחיל',
+    excerpt: 'ד"ר אלדד רום מתארח בפודקאסט של גיא קצוביץ ומשתף כיצד להכיר את עצמנו יותר טוב, לייצר חוסן מנטלי ולקבל החלטות בצורה טובה יותר בתקופות של אי-ודאות',
     category: 'Podcasts',
-    link: 'https://www.themarker.com/technation/podcasts/2020-05-14/ty-article/0000017f-e988-da9b-a1ff-edef1d030000',
-    publishedAt: '2024-09-23'
+    link: 'https://podcasts.apple.com/il/podcast/%D7%A4%D7%A1%D7%99%D7%9B%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%94-%D7%91%D7%96%D7%9E%D7%9F-%D7%9C%D7%97%D7%A5-%D7%9E%D7%94-%D7%A7%D7%95%D7%A8%D7%94-%D7%9C%D7%A0%D7%95-%D7%91%D7%92%D7%95%D7%A3-%D7%95%D7%91%D7%A8%D7%90%D7%A9-%D7%95%D7%90%D7%99%D7%9A-%D7%9E%D7%AA%D7%A2%D7%9C%D7%99%D7%9D/id1252035397?i=1000637304253?i=1000509051000',
+    publishedAt: '2021-02-01'
   },
   {
     id: 'pub-4',
@@ -34,9 +34,9 @@ export const publications: Publication[] = [
     title: 'פסיכולוגיה בזמן לחץ: מה קורה לנו בגוף ובראש?',
     excerpt: 'איך מתעלים את עצמנו ואת סביבתנו בזמנים דוחקים? ד"ר אלדד רום מסביר מה קורה לנו בגוף ובראש בזמני משבר',
     category: 'Podcasts',
-    link: 'https://www.youtube.com/watch?v=-wk5XE-n7Zg',
+    link: 'https://podcasts.apple.com/il/podcast/%D7%A4%D7%A1%D7%99%D7%9B%D7%95%D7%9C%D7%95%D7%92%D7%99%D7%94-%D7%91%D7%96%D7%9E%D7%9F-%D7%9C%D7%97%D7%A5-%D7%9E%D7%94-%D7%A7%D7%95%D7%A8%D7%94-%D7%9C%D7%A0%D7%95-%D7%91%D7%92%D7%95%D7%A3-%D7%95%D7%91%D7%A8%D7%90%D7%A9-%D7%95%D7%90%D7%99%D7%9A-%D7%9E%D7%AA%D7%A2%D7%9C%D7%99%D7%9D/id1252035397?i=1000637304253',
     image: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&q=80',
-    publishedAt: '2024-11-18'
+    publishedAt: '2023-12-03'
   },
    {
     id: 'pub-startup',
@@ -47,6 +47,14 @@ export const publications: Publication[] = [
     publishedAt: '2025-11-11'
   },
   // === FROM THE PRESS ===
+  {
+    id: 'pub-geektime-od',
+    title: 'פודקסט עוד: ד"ר אלדד רום על פסיכולוגיה ארגונית בסטארטאפים',
+    excerpt: 'ראיון מיוחד עם ד"ר אלדד רום על ליווי חברות סטארטאפ, פיתוח מנהלים ובניית צוותים בעולם ההייטק',
+    category: 'From the Press',
+    link: 'https://www.geektime.co.il/od-podcast-eldad-rom/',
+    publishedAt: '2021-02-01'
+  },
   {
     id: 'pub-2',
     title: 'אלפי חיילים יוצאים מעזה. כך כדאי לקבל אותם בחזרה לעבודה',
@@ -113,7 +121,7 @@ export const publications: Publication[] = [
     title: 'מה עובדים רוצים?',
     excerpt: 'שכר אינו הדרך היחידה לשמור על שביעות הרצון של העובדים. שני סקרים חדשים מגלים כי שיחות הערכה קבועות וחופשות מוסדרות חשובות לא פחות',
     category: 'From the Press',
-    link: 'https://www.calcalist.co.il/local/articles/0,7340,L-3572828,00.html',
+    link: 'https://finance.walla.co.il/item/1800149',
     image: 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?w=800&q=80',
     publishedAt: '2024-10-28'
   },
@@ -136,6 +144,14 @@ export const publications: Publication[] = [
     publishedAt: '2024-10-20'
   },
   // === RESEARCH (Academic Papers) ===
+  {
+    id: 'research-adult-attachment',
+    title: 'The Role of Adult Attachment in Team Process and Team Effectiveness',
+    excerpt: 'Research examining how adult attachment styles influence team dynamics, communication patterns, and overall team performance in organizational settings.',
+    category: 'Research',
+    link: '/papers/JPPRV1N1A3-Rom.pdf',
+    publishedAt: '2013-01-01'
+  },
   {
     id: 'research-1',
     title: 'Adult attachment and perceived parental style may shape leadership behaviors',
