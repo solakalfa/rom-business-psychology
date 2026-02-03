@@ -2,7 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import DefaultCTA from "../components/cta/DefaultCTA.astro";
 import Footer from "../components/Footer.astro";
-import { clients } from "../data/clients.js";
+import { getClientLogos } from "../sanity/api";
+const clients = await getClientLogos();
 ---
 
 <Layout title="Our Clients - ROM Business Psychology">
@@ -43,7 +44,7 @@ import { clients } from "../data/clients.js";
       {clients.map(client => (
         <div class="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow flex items-center justify-center min-h-[100px]">
           <img 
-            src={client.logo} 
+            src={client.logoUrl} 
             alt={client.name}
             class="max-h-16 max-w-full w-auto object-contain"
             loading="lazy"
