@@ -223,32 +223,46 @@
   20% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 211, 238, 0); }
 }
 
+/* Blue glow on menu button when drawer is open */
+
 .animate-attention {
   animation: attention-pulse 6s infinite;
 }
 </style>
 
 <script>
-  // Glow animation
+  // Glow animation on page load
   document.querySelector(".logo-rom")?.classList.add("glow-active");
   document.querySelector(".logo-divider")?.classList.add("glow-active");
   document.querySelector(".logo-text")?.classList.add("glow-active");
 
-  // הסקריפט שמפעיל את הלחיצה
   const menuBtn = document.getElementById("menuBtn");
   const menuIcon = document.getElementById("menuIcon");
+  const logoRom = document.querySelector(".logo-rom");
+  const logoDivider = document.querySelector(".logo-divider");
+  const logoText = document.querySelector(".logo-text");
+
+  function replayLogoGlow() {
+    [logoRom, logoDivider, logoText].forEach(el => {
+      if (!el) return;
+      el.classList.remove("glow-active");
+      void (el as HTMLElement).offsetWidth;
+      el.classList.add("glow-active");
+    });
+  }
 
   if (menuBtn && menuIcon) {
-    // לחיצה על הכפתור שולחת אירוע למגירה להיפתח
     menuBtn.addEventListener("click", () => {
       window.dispatchEvent(new CustomEvent("toggleMenu"));
     });
 
-    // הקשבה לאירוע מהמגירה כדי לשנות את האייקון ל-X
     window.addEventListener("menuStateChanged", ((e: CustomEvent) => {
-      menuIcon.classList.toggle("open", e.detail.isOpen);
-      if (e.detail.isOpen) {
+      const isOpen = e.detail.isOpen;
+      menuIcon.classList.toggle("open", isOpen);
+      menuBtn.classList.toggle("menu-open", isOpen);
+      if (isOpen) {
         menuBtn.classList.remove("animate-attention");
+        replayLogoGlow();
       } else {
         menuBtn.classList.add("animate-attention");
       }
