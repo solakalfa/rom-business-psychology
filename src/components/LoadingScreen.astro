@@ -1,0 +1,152 @@
+---
+// src/components/LoadingScreen.astro
+// Glow Reveal loading animation - runs on every page load
+---
+
+<div id="loading-screen" class="loading-screen">
+  <div class="loading-logo">
+    <div class="ls-rom">ROM<span class="ls-dot">.</span></div>
+    <div class="ls-divider"></div>
+    <div class="ls-text">
+      <span>BUSINESS</span>
+      <span>PSYCHOLOGY</span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+
+  .loading-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .loading-logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .ls-rom {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(60px, 15vw, 80px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -3px;
+    color: white;
+    opacity: 0;
+  }
+
+  .ls-dot {
+    color: #22d3ee;
+    opacity: 0;
+    display: inline-block;
+  }
+
+  .ls-divider {
+    width: 2px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.15);
+    opacity: 0;
+  }
+
+  .ls-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .ls-text span {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(14px, 3.5vw, 19px);
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 2.5px;
+    line-height: 1.25;
+    opacity: 0;
+  }
+
+  /* Animations */
+  .loading-screen.active .ls-rom {
+    animation: glowText 1s ease 0.2s forwards;
+  }
+
+  .loading-screen.active .ls-dot {
+    animation: cyanPulse 0.8s ease 0.6s forwards;
+  }
+
+  .loading-screen.active .ls-divider {
+    animation: dividerGlow 0.6s ease 0.7s forwards;
+  }
+
+  .loading-screen.active .ls-text span:first-child {
+    animation: fadeIn 0.5s ease 0.85s forwards;
+  }
+
+  .loading-screen.active .ls-text span:last-child {
+    animation: fadeIn 0.5s ease 1s forwards;
+  }
+
+  @keyframes glowText {
+    0% { opacity: 0; text-shadow: 0 0 0 transparent; }
+    40% { opacity: 1; text-shadow: 0 0 30px rgba(34, 211, 238, 0.5), 0 0 60px rgba(34, 211, 238, 0.2); }
+    100% { opacity: 1; text-shadow: none; }
+  }
+
+  @keyframes cyanPulse {
+    0% { opacity: 0; text-shadow: 0 0 0 transparent; }
+    50% { opacity: 1; text-shadow: 0 0 20px #22d3ee, 0 0 40px #22d3ee; }
+    100% { opacity: 1; text-shadow: 0 0 8px rgba(34, 211, 238, 0.3); }
+  }
+
+  @keyframes dividerGlow {
+    0% { opacity: 0; box-shadow: 0 0 0 transparent; }
+    50% { opacity: 1; box-shadow: 0 0 12px rgba(34, 211, 238, 0.4); background: #22d3ee; }
+    100% { opacity: 1; box-shadow: none; background: rgba(255, 255, 255, 0.15); }
+  }
+
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+</style>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const screen = document.getElementById('loading-screen');
+    if (!screen) return;
+
+    // Start animation
+    screen.classList.add('active');
+
+    // Fade out after animation completes
+    setTimeout(() => {
+      screen.classList.add('fade-out');
+    }, 1800);
+
+    // Remove from DOM after fade
+    setTimeout(() => {
+      screen.remove();
+    }, 2300);
+  });
+
+  // Fallback for non-ViewTransitions
+  document.addEventListener('DOMContentLoaded', () => {
+    const screen = document.getElementById('loading-screen');
+    if (!screen) return;
+    if (!screen.classList.contains('active')) {
+      screen.classList.add('active');
+      setTimeout(() => screen.classList.add('fade-out'), 1800);
+      setTimeout(() => screen.remove(), 2300);
+    }
+  });
+</script>

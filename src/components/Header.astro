@@ -105,6 +105,54 @@
 
 .text-cyan-400 { color: #22d3ee; }
 
+/* Glow Reveal Animation */
+.logo-rom {
+  opacity: 0;
+}
+.logo-rom.glow-active {
+  animation: glowText 1s ease 0.1s forwards;
+}
+.logo .logo-rom .text-cyan-400 {
+  opacity: 0;
+}
+.logo-rom.glow-active .text-cyan-400 {
+  animation: cyanPulse 0.8s ease 0.5s forwards;
+}
+.logo .logo-divider {
+  opacity: 0;
+}
+.logo-divider.glow-active {
+  animation: dividerGlow 0.6s ease 0.6s forwards;
+}
+.logo-text span {
+  opacity: 0;
+}
+.logo-text.glow-active span:first-child {
+  animation: fadeInText 0.5s ease 0.75s forwards;
+}
+.logo-text.glow-active span:last-child {
+  animation: fadeInText 0.5s ease 0.9s forwards;
+}
+
+@keyframes glowText {
+  0% { opacity: 0; text-shadow: 0 0 0 transparent; }
+  40% { opacity: 1; text-shadow: 0 0 30px rgba(34, 211, 238, 0.5), 0 0 60px rgba(34, 211, 238, 0.2); }
+  100% { opacity: 1; text-shadow: none; }
+}
+@keyframes cyanPulse {
+  0% { opacity: 0; text-shadow: 0 0 0 transparent; }
+  50% { opacity: 1; text-shadow: 0 0 20px #22d3ee, 0 0 40px #22d3ee; }
+  100% { opacity: 1; text-shadow: 0 0 8px rgba(34, 211, 238, 0.3); }
+}
+@keyframes dividerGlow {
+  0% { opacity: 0; box-shadow: 0 0 0 transparent; }
+  50% { opacity: 1; box-shadow: 0 0 12px rgba(34, 211, 238, 0.4); background: #22d3ee; }
+  100% { opacity: 1; box-shadow: none; background: rgba(255, 255, 255, 0.15); }
+}
+@keyframes fadeInText {
+  to { opacity: 1; }
+}
+
 .menu-btn {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -181,6 +229,11 @@
 </style>
 
 <script>
+  // Glow animation
+  document.querySelector(".logo-rom")?.classList.add("glow-active");
+  document.querySelector(".logo-divider")?.classList.add("glow-active");
+  document.querySelector(".logo-text")?.classList.add("glow-active");
+
   // הסקריפט שמפעיל את הלחיצה
   const menuBtn = document.getElementById("menuBtn");
   const menuIcon = document.getElementById("menuIcon");
